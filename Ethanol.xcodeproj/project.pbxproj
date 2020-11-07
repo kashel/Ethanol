@@ -24,6 +24,7 @@
 		97B00ACD255728D700D7C2F4 /* IngredientGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00ACC255728D700D7C2F4 /* IngredientGroupView.swift */; };
 		97B00AD22557290000D7C2F4 /* IngredientTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AD12557290000D7C2F4 /* IngredientTileView.swift */; };
 		97B00AD72557290D00D7C2F4 /* SelectedIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AD62557290D00D7C2F4 /* SelectedIngredientsView.swift */; };
+		DC0F3B3C255732BF009E449B /* QStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F3B3B255732BF009E449B /* QStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		97B00ACC255728D700D7C2F4 /* IngredientGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientGroupView.swift; sourceTree = "<group>"; };
 		97B00AD12557290000D7C2F4 /* IngredientTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTileView.swift; sourceTree = "<group>"; };
 		97B00AD62557290D00D7C2F4 /* SelectedIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedIngredientsView.swift; sourceTree = "<group>"; };
+		DC0F3B3B255732BF009E449B /* QStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		977E69402550910E00BAA48D /* Ethanol */ = {
 			isa = PBXGroup;
 			children = (
+				DC0F3B3A25573297009E449B /* CustomViews */,
 				97B00AAE2557207700D7C2F4 /* IngredientsSelection */,
 				97B00AA525570E3800D7C2F4 /* Repository */,
 				97B00A9F25570CA300D7C2F4 /* API */,
@@ -217,6 +220,14 @@
 				97B00AD62557290D00D7C2F4 /* SelectedIngredientsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DC0F3B3A25573297009E449B /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				DC0F3B3B255732BF009E449B /* QStack.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +365,7 @@
 				97B00AC12557237300D7C2F4 /* IngredientsRepository.swift in Sources */,
 				97B00AB7255722A000D7C2F4 /* IngredientGroup.swift in Sources */,
 				97B00AA725570E5B00D7C2F4 /* CocktailRepository.swift in Sources */,
+				DC0F3B3C255732BF009E449B /* QStack.swift in Sources */,
 				97B00ACD255728D700D7C2F4 /* IngredientGroupView.swift in Sources */,
 				978090042557091B00CD66BB /* Unit.swift in Sources */,
 				97808FFC2557088F00CD66BB /* Indgredient.swift in Sources */,

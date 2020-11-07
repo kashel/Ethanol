@@ -3,15 +3,17 @@
 import SwiftUI
 
 struct IngredientTileView: View {
+  let ingredient: Ingredient
+  
   var body: some View {
     ZStack {
-      Image("orange")
+      Image(ingredient.imageName)
         .resizable()
         .aspectRatio(contentMode: .fit)
         .padding()
       VStack {
         Spacer()
-        Text("Orange")
+        Text(ingredient.name)
           .foregroundColor(Color.white)
       }
     }
@@ -22,6 +24,7 @@ struct IngredientTileView: View {
 
 struct IngredientTileView_Previews: PreviewProvider {
   static var previews: some View {
-    IngredientTileView()
+    let orange = Ingredient(name: "orange", imageName: "orange", groups: [])
+    IngredientTileView(ingredient: orange)
   }
 }

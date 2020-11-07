@@ -1,9 +1,10 @@
 //
 
 import Foundation
+import Combine
 
 protocol CocktailAPI {
-  func getCocktail(with ingredients: [String], completed: ([Cocktail]) -> Void)
+  func getCocktail(with ingredients: [String]) -> AnyPublisher<[Cocktail], Error>
 }
 
 struct CocktailAPIMock: CocktailAPI {
@@ -12,8 +13,8 @@ struct CocktailAPIMock: CocktailAPI {
     Cocktail(name: "Mojito", description: "The Mojito is traditionally served over ice in a highball glass and often associated with summer.", ingredients: IngredientsMock.mojito)
   ]
   
-  func getCocktail(with ingredients: [String], completed: ([Cocktail]) -> Void) {
-    completed(mockCocktails)
+  func getCocktail(with ingredients: [String]) -> AnyPublisher<[Cocktail], Error> {
+    return [mockCocktails].publisher.setFailureType(to: Error.self).eraseToAnyPublisher()
   }
 }
 

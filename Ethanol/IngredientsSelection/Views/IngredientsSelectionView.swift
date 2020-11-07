@@ -3,13 +3,17 @@
 import SwiftUI
 
 struct IngredientsSelectionView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  var body: some View {
+    VStack {
+      
+      Text("test")
+      Text("test")
     }
+  }
 }
 
 struct IngredientsSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        IngredientsSelectionView()
-    }
+  static var previews: some View {
+    IngredientsSelectionView()
+  }
 }

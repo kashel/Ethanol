@@ -9,8 +9,8 @@ struct LocalIngredientsRepository: IngredientsRepository {
   var ingredientsGroups: [IngredientGroup] { IngredientGroup.allCases }
   
   var ingredients: Set<Ingredient> = [
-    Ingredient(name: "White rum", imageName: "white_rum", groups: [.alkohols]),
-    Ingredient(name: "Tequila", imageName: "tequila", groups: [.alkohols]),
+    Ingredient(name: "White rum", imageName: "white_rum", groups: [.alcohols]),
+    Ingredient(name: "Tequila", imageName: "tequila", groups: [.alcohols]),
     Ingredient(name: "Orange", imageName: "orange", groups: [.fruits]),
   ]
   

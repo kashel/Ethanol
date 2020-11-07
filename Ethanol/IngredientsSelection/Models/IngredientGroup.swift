@@ -1,6 +1,6 @@
 import Foundation
 
 enum IngredientGroup: String, CaseIterable {
-  case alkohols, fruits, common
+  case alcohols, fruits, common
   var name: String { rawValue }
 }

@@ -19,6 +19,7 @@ struct IngredientTileView: View {
     }
     .background(Color.green)
     .frame(width: 90, height: 90)
+    .cornerRadius(10)
   }
 }
 

@@ -30,3 +30,4 @@ struct IngredientGroupView_Previews: PreviewProvider {
         IngredientGroupView(ingredientGroup: group, ingredients: ingredients)
     }
 }
+ 

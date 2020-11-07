@@ -1,7 +1,7 @@
 import Foundation
 
-struct Ingredient {
+struct Ingredient: Equatable, Hashable {
   let name: String
   let imageName: String
-  let group: IngredientGroup
+  let groups: Set<IngredientGroup>
 }

@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		977E69422550910E00BAA48D /* EthanolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E69412550910E00BAA48D /* EthanolApp.swift */; };
+		977E69442550910E00BAA48D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E69432550910E00BAA48D /* ContentView.swift */; };
+		977E69462550910F00BAA48D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 977E69452550910F00BAA48D /* Assets.xcassets */; };
+		977E69492550910F00BAA48D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 977E69482550910F00BAA48D /* Preview Assets.xcassets */; };
+		977E69542550910F00BAA48D /* EthanolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E69532550910F00BAA48D /* EthanolTests.swift */; };
+		977E695F2550910F00BAA48D /* EthanolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E695E2550910F00BAA48D /* EthanolUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		977E69502550910F00BAA48D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 977E69362550910D00BAA48D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 977E693D2550910E00BAA48D;
+			remoteInfo = Ethanol;
+		};
+		977E695B2550910F00BAA48D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 977E69362550910D00BAA48D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 977E693D2550910E00BAA48D;
+			remoteInfo = Ethanol;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		977E693E2550910E00BAA48D /* Ethanol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ethanol.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		977E69412550910E00BAA48D /* EthanolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthanolApp.swift; sourceTree = "<group>"; };
+		977E69432550910E00BAA48D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		977E69452550910F00BAA48D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		977E69482550910F00BAA48D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		977E694A2550910F00BAA48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		977E694F2550910F00BAA48D /* EthanolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EthanolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		977E69532550910F00BAA48D /* EthanolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthanolTests.swift; sourceTree = "<group>"; };
+		977E69552550910F00BAA48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		977E695A2550910F00BAA48D /* EthanolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EthanolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		977E695E2550910F00BAA48D /* EthanolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthanolUITests.swift; sourceTree = "<group>"; };
+		977E69602550910F00BAA48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		977E693B2550910E00BAA48D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		977E694C2550910F00BAA48D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		977E69572550910F00BAA48D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		977E69352550910D00BAA48D = {
+			isa = PBXGroup;
+			children = (
+				977E69402550910E00BAA48D /* Ethanol */,
+				977E69522550910F00BAA48D /* EthanolTests */,
+				977E695D2550910F00BAA48D /* EthanolUITests */,
+				977E693F2550910E00BAA48D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		977E693F2550910E00BAA48D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				977E693E2550910E00BAA48D /* Ethanol.app */,
+				977E694F2550910F00BAA48D /* EthanolTests.xctest */,
+				977E695A2550910F00BAA48D /* EthanolUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		977E69402550910E00BAA48D /* Ethanol */ = {
+			isa = PBXGroup;
+			children = (
+				977E69412550910E00BAA48D /* EthanolApp.swift */,
+				977E69432550910E00BAA48D /* ContentView.swift */,
+				977E69452550910F00BAA48D /* Assets.xcassets */,
+				977E694A2550910F00BAA48D /* Info.plist */,
+				977E69472550910F00BAA48D /* Preview Content */,
+			);
+			path = Ethanol;
+			sourceTree = "<group>";
+		};
+		977E69472550910F00BAA48D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				977E69482550910F00BAA48D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		977E69522550910F00BAA48D /* EthanolTests */ = {
+			isa = PBXGroup;
+			children = (
+				977E69532550910F00BAA48D /* EthanolTests.swift */,
+				977E69552550910F00BAA48D /* Info.plist */,
+			);
+			path = EthanolTests;
+			sourceTree = "<group>";
+		};
+		977E695D2550910F00BAA48D /* EthanolUITests */ = {
+			isa = PBXGroup;
+			children = (
+				977E695E2550910F00BAA48D /* EthanolUITests.swift */,
+				977E69602550910F00BAA48D /* Info.plist */,
+			);
+			path = EthanolUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		977E693D2550910E00BAA48D /* Ethanol */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 977E69632550910F00BAA48D /* Build configuration list for PBXNativeTarget "Ethanol" */;
+			buildPhases = (
+				977E693A2550910E00BAA48D /* Sources */,
+				977E693B2550910E00BAA48D /* Frameworks */,
+				977E693C2550910E00BAA48D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ethanol;
+			productName = Ethanol;
+			productReference = 977E693E2550910E00BAA48D /* Ethanol.app */;
+			productType = "com.apple.product-type.application";
+		};
+		977E694E2550910F00BAA48D /* EthanolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 977E69662550910F00BAA48D /* Build configuration list for PBXNativeTarget "EthanolTests" */;
+			buildPhases = (
+				977E694B2550910F00BAA48D /* Sources */,
+				977E694C2550910F00BAA48D /* Frameworks */,
+				977E694D2550910F00BAA48D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				977E69512550910F00BAA48D /* PBXTargetDependency */,
+			);
+			name = EthanolTests;
+			productName = EthanolTests;
+			productReference = 977E694F2550910F00BAA48D /* EthanolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		977E69592550910F00BAA48D /* EthanolUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 977E69692550910F00BAA48D /* Build configuration list for PBXNativeTarget "EthanolUITests" */;
+			buildPhases = (
+				977E69562550910F00BAA48D /* Sources */,
+				977E69572550910F00BAA48D /* Frameworks */,
+				977E69582550910F00BAA48D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				977E695C2550910F00BAA48D /* PBXTargetDependency */,
+			);
+			name = EthanolUITests;
+			productName = EthanolUITests;
+			productReference = 977E695A2550910F00BAA48D /* EthanolUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		977E69362550910D00BAA48D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					977E693D2550910E00BAA48D = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					977E694E2550910F00BAA48D = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 977E693D2550910E00BAA48D;
+					};
+					977E69592550910F00BAA48D = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 977E693D2550910E00BAA48D;
+					};
+				};
+			};
+			buildConfigurationList = 977E69392550910D00BAA48D /* Build configuration list for PBXProject "Ethanol" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 977E69352550910D00BAA48D;
+			productRefGroup = 977E693F2550910E00BAA48D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				977E693D2550910E00BAA48D /* Ethanol */,
+				977E694E2550910F00BAA48D /* EthanolTests */,
+				977E69592550910F00BAA48D /* EthanolUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		977E693C2550910E00BAA48D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				977E69492550910F00BAA48D /* Preview Assets.xcassets in Resources */,
+				977E69462550910F00BAA48D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		977E694D2550910F00BAA48D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		977E69582550910F00BAA48D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		977E693A2550910E00BAA48D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				977E69442550910E00BAA48D /* ContentView.swift in Sources */,
+				977E69422550910E00BAA48D /* EthanolApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		977E694B2550910F00BAA48D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				977E69542550910F00BAA48D /* EthanolTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		977E69562550910F00BAA48D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				977E695F2550910F00BAA48D /* EthanolUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		977E69512550910F00BAA48D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 977E693D2550910E00BAA48D /* Ethanol */;
+			targetProxy = 977E69502550910F00BAA48D /* PBXContainerItemProxy */;
+		};
+		977E695C2550910F00BAA48D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 977E693D2550910E00BAA48D /* Ethanol */;
+			targetProxy = 977E695B2550910F00BAA48D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		977E69612550910F00BAA48D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		977E69622550910F00BAA48D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		977E69642550910F00BAA48D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Ethanol/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Ethanol/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kashel.Ethanol;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		977E69652550910F00BAA48D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Ethanol/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Ethanol/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kashel.Ethanol;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		977E69672550910F00BAA48D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EthanolTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kashel.EthanolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ethanol.app/Ethanol";
+			};
+			name = Debug;
+		};
+		977E69682550910F00BAA48D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EthanolTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kashel.EthanolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ethanol.app/Ethanol";
+			};
+			name = Release;
+		};
+		977E696A2550910F00BAA48D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EthanolUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kashel.EthanolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ethanol;
+			};
+			name = Debug;
+		};
+		977E696B2550910F00BAA48D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EthanolUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kashel.EthanolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ethanol;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		977E69392550910D00BAA48D /* Build configuration list for PBXProject "Ethanol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				977E69612550910F00BAA48D /* Debug */,
+				977E69622550910F00BAA48D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		977E69632550910F00BAA48D /* Build configuration list for PBXNativeTarget "Ethanol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				977E69642550910F00BAA48D /* Debug */,
+				977E69652550910F00BAA48D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		977E69662550910F00BAA48D /* Build configuration list for PBXNativeTarget "EthanolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				977E69672550910F00BAA48D /* Debug */,
+				977E69682550910F00BAA48D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		977E69692550910F00BAA48D /* Build configuration list for PBXNativeTarget "EthanolUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				977E696A2550910F00BAA48D /* Debug */,
+				977E696B2550910F00BAA48D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 977E69362550910D00BAA48D /* Project object */;
+}

@@ -13,6 +13,11 @@
 		977E69492550910F00BAA48D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 977E69482550910F00BAA48D /* Preview Assets.xcassets */; };
 		977E69542550910F00BAA48D /* EthanolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E69532550910F00BAA48D /* EthanolTests.swift */; };
 		977E695F2550910F00BAA48D /* EthanolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E695E2550910F00BAA48D /* EthanolUITests.swift */; };
+		97808FFC2557088F00CD66BB /* Indgredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97808FFB2557088F00CD66BB /* Indgredient.swift */; };
+		978090042557091B00CD66BB /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978090032557091B00CD66BB /* Unit.swift */; };
+		97B00A9825570C3600D7C2F4 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00A9725570C3600D7C2F4 /* Cocktail.swift */; };
+		97B00AA125570CB700D7C2F4 /* CocktailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AA025570CB700D7C2F4 /* CocktailAPI.swift */; };
+		97B00AA725570E5B00D7C2F4 /* CocktailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AA625570E5B00D7C2F4 /* CocktailRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		977E695A2550910F00BAA48D /* EthanolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EthanolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		977E695E2550910F00BAA48D /* EthanolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthanolUITests.swift; sourceTree = "<group>"; };
 		977E69602550910F00BAA48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97808FFB2557088F00CD66BB /* Indgredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indgredient.swift; sourceTree = "<group>"; };
+		978090032557091B00CD66BB /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		97B00A9725570C3600D7C2F4 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
+		97B00AA025570CB700D7C2F4 /* CocktailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailAPI.swift; sourceTree = "<group>"; };
+		97B00AA625570E5B00D7C2F4 /* CocktailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +105,9 @@
 		977E69402550910E00BAA48D /* Ethanol */ = {
 			isa = PBXGroup;
 			children = (
+				97B00AA525570E3800D7C2F4 /* Repository */,
+				97B00A9F25570CA300D7C2F4 /* API */,
+				97808FFA2557084F00CD66BB /* Models */,
 				977E69412550910E00BAA48D /* EthanolApp.swift */,
 				977E69432550910E00BAA48D /* ContentView.swift */,
 				977E69452550910F00BAA48D /* Assets.xcassets */,
@@ -128,6 +141,32 @@
 				977E69602550910F00BAA48D /* Info.plist */,
 			);
 			path = EthanolUITests;
+			sourceTree = "<group>";
+		};
+		97808FFA2557084F00CD66BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				97808FFB2557088F00CD66BB /* Indgredient.swift */,
+				978090032557091B00CD66BB /* Unit.swift */,
+				97B00A9725570C3600D7C2F4 /* Cocktail.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		97B00A9F25570CA300D7C2F4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				97B00AA025570CB700D7C2F4 /* CocktailAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		97B00AA525570E3800D7C2F4 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				97B00AA625570E5B00D7C2F4 /* CocktailRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97B00AA125570CB700D7C2F4 /* CocktailAPI.swift in Sources */,
 				977E69442550910E00BAA48D /* ContentView.swift in Sources */,
+				97B00AA725570E5B00D7C2F4 /* CocktailRepository.swift in Sources */,
+				978090042557091B00CD66BB /* Unit.swift in Sources */,
+				97808FFC2557088F00CD66BB /* Indgredient.swift in Sources */,
 				977E69422550910E00BAA48D /* EthanolApp.swift in Sources */,
+				97B00A9825570C3600D7C2F4 /* Cocktail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

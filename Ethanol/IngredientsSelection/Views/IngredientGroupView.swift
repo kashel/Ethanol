@@ -12,9 +12,17 @@ struct IngredientGroupView: View {
           Text(ingredientGroup.name)
           Spacer()
         }
-        HStack {
-          ForEach(ingredients, id: \.self) {
-            IngredientTileView(ingredient: $0)
+        ScrollView(.horizontal) {
+          HStack {
+            ForEach(ingredients, id: \.self) { ingredient in
+              if !ingredient.isSelected {
+                Button(action: {
+                  print("tapped on igredient")
+                }, label: {
+                  IngredientTileView(ingredient: ingredient)
+                })
+              }
+            }
           }
         }
       }
@@ -24,7 +32,8 @@ struct IngredientGroupView: View {
 
 struct IngredientGroupView_Previews: PreviewProvider {
     static var previews: some View {
-      let ingredientsRepository = LocalIngredientsRepository()
+      let model = IngredientsModel()
+      let ingredientsRepository = LocalIngredientsRepository(model: model)
       let group = IngredientGroup.alcohols
       let ingredients = ingredientsRepository.getIngredients(for: group)
         IngredientGroupView(ingredientGroup: group, ingredients: ingredients)

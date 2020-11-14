@@ -29,6 +29,7 @@
 		DC5C445E256048FE00C2AB17 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C445D256048FE00C2AB17 /* AppState.swift */; };
 		DC5C4471256049F000C2AB17 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4470256049F000C2AB17 /* DependencyContainer.swift */; };
 		DC5C447625604CF200C2AB17 /* Interactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C447525604CF200C2AB17 /* Interactors.swift */; };
+		DC5C4486256061F000C2AB17 /* IngredientSelectionObservedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4485256061F000C2AB17 /* IngredientSelectionObservedModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		DC5C445D256048FE00C2AB17 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		DC5C4470256049F000C2AB17 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		DC5C447525604CF200C2AB17 /* Interactors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactors.swift; sourceTree = "<group>"; };
+		DC5C4485256061F000C2AB17 /* IngredientSelectionObservedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSelectionObservedModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			children = (
 				97808FFB2557088F00CD66BB /* Indgredient.swift */,
 				97B00AB6255722A000D7C2F4 /* IngredientGroup.swift */,
+				DC5C4485256061F000C2AB17 /* IngredientSelectionObservedModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5C4486256061F000C2AB17 /* IngredientSelectionObservedModel.swift in Sources */,
 				DC5C447625604CF200C2AB17 /* Interactors.swift in Sources */,
 				DC5C44572560489500C2AB17 /* Store.swift in Sources */,
 				97B00AA125570CB700D7C2F4 /* CocktailAPI.swift in Sources */,

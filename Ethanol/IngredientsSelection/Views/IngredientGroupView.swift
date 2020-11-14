@@ -3,23 +3,24 @@
 import SwiftUI
 
 struct IngredientGroupView: View {
-  let ingredientGroup: IngredientGroup
-  let ingredients: [Ingredient]
+  @Environment(\.injected) private var injected: DependencyContainer
+  @State private var selection: IngredientSelectionObservedModel = .init()
   
-    var body: some View {
-      VStack {
-        HStack {
-          Text(ingredientGroup.name)
-          Spacer()
-        }
-        HStack {
-          ForEach(ingredients, id: \.self) {
-            IngredientTileView(ingredient: $0)
-          }
-        }
+  let ingredientGroup: IngredientGroup
+  
+  var body: some View {
+    VStack {
+      HStack {
+        Text(ingredientGroup.name)
+        Spacer()
       }
-      .padding()
+      HStack {
+        ForEach(selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }, id: \.self) {
+          IngredientTileView(ingredient: $0)          }
+      }
     }
+    .padding()
+  }
 }
 
 struct IngredientGroupView_Previews: PreviewProvider {
@@ -27,6 +28,7 @@ struct IngredientGroupView_Previews: PreviewProvider {
       let ingredientsRepository = LocalIngredientsRepository()
       let group = IngredientGroup.alcohols
       let ingredients = ingredientsRepository.getIngredients(for: group)
-        IngredientGroupView(ingredientGroup: group, ingredients: ingredients)
+        IngredientGroupView(ingredientGroup: group)
+          .environment(\.injected, DependencyContainer.defaultValue)
     }
 }

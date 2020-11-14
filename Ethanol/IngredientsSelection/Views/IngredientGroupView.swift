@@ -20,9 +20,9 @@ struct IngredientGroupView: View {
           ForEach(selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }, id: \.self) {
             let currentIngredient = $0
             IngredientTileView(ingredient: $0)
-              .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+              .onTapGesture {
                 select(ingredient: currentIngredient)
-              })
+              }
           }
         }
       }

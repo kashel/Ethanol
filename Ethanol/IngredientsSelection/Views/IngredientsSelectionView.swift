@@ -9,6 +9,9 @@ struct IngredientsSelectionView: View {
 
   var body: some View {
     VStack {
+      ForEach(IngredientGroup.allCases, id: \.self) {
+        components(for: $0)
+      }
     }
   }
 }
@@ -16,5 +19,12 @@ struct IngredientsSelectionView: View {
 struct IngredientsSelectionView_Previews: PreviewProvider {
   static var previews: some View {
     IngredientsSelectionView()
+  }
+}
+
+private extension IngredientsSelectionView {
+  func components(for group: IngredientGroup) -> some View {
+    IngredientGroupView(ingredientGroup: group)
+      .environment(\.injected, injected)
   }
 }

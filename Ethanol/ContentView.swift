@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+  private let dependencyContainer: DependencyContainer
+
+  init(dependencyContainer: DependencyContainer) {
+    self.dependencyContainer = dependencyContainer
+  }
+  
   var body: some View {
-    Text("Hello, world!")
-      .padding()
+    IngredientsSelectionView()
+      .environment(\.injected, dependencyContainer)
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
+    ContentView(dependencyContainer: DependencyContainer.defaultValue)
   }
 }

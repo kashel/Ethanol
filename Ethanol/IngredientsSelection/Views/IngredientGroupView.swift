@@ -1,5 +1,6 @@
 //
 
+import Combine
 import SwiftUI
 
 struct IngredientGroupView: View {
@@ -17,11 +18,17 @@ struct IngredientGroupView: View {
       ScrollView(.horizontal) {
         HStack {
           ForEach(selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }, id: \.self) {
-            IngredientTileView(ingredient: $0)          }
+            let currentIngredient = $0
+            IngredientTileView(ingredient: $0)
+              .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                select(ingredient: currentIngredient)
+              })
+          }
         }
       }
     }
     .padding()
+    .onReceive(update, perform: { selection = $0 })
   }
 }
 
@@ -31,4 +38,16 @@ struct IngredientGroupView_Previews: PreviewProvider {
         IngredientGroupView(ingredientGroup: group)
           .environment(\.injected, DependencyContainer.defaultValue)
     }
+}
+
+private extension IngredientGroupView {
+  func select(ingredient: Ingredient) {
+    injected.interactors.ingredientsSelection.select(ingredient: ingredient)
+  }
+}
+
+private extension IngredientGroupView {
+  var update: AnyPublisher<IngredientSelectionObservedModel, Never> {
+      injected.appState.updates(for: \.ingredientSelection)
+  }
 }

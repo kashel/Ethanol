@@ -1,13 +1,14 @@
 import SwiftUI
 
 struct DependencyContainer {
-  let appState = Store<AppState>(AppState())
-  lazy var interactors = Interactors(appState: appState)
+  let appState: Store<AppState>
+  let interactors: Interactors
 }
 
 extension DependencyContainer: EnvironmentKey {
   static var defaultValue: DependencyContainer {
-    DependencyContainer()
+    let appState = Store<AppState>(AppState())
+    return DependencyContainer(appState: appState, interactors: Interactors(appState: appState))
   }
 }
 

@@ -5,4 +5,7 @@ struct Interactors {
     self.ingredientsSelection = BaseIngredientsSelectionInteractor(appState: appState)
   }
 
+  static var stub: Interactors {
+    Interactors(appState: Store<AppState>(AppState()))
+  }
 }

@@ -18,6 +18,7 @@ struct EthanolApp: App {
 
 private extension EthanolApp {
   var makeDependencyContainer: DependencyContainer {
-    DependencyContainer()
+    let appState = Store<AppState>(AppState())
+    return DependencyContainer(appState: appState, interactors: Interactors(appState: appState))
   }
 }

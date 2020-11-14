@@ -25,9 +25,7 @@ struct IngredientGroupView: View {
 
 struct IngredientGroupView_Previews: PreviewProvider {
     static var previews: some View {
-      let ingredientsRepository = LocalIngredientsRepository()
       let group = IngredientGroup.alcohols
-      let ingredients = ingredientsRepository.getIngredients(for: group)
         IngredientGroupView(ingredientGroup: group)
           .environment(\.injected, DependencyContainer.defaultValue)
     }

@@ -18,6 +18,6 @@ struct EthanolApp: App {
 
 private extension EthanolApp {
   var makeDependencyContainer: DependencyContainer {
-    DependencyContainer(interactors: Interactors())
+    DependencyContainer()
   }
 }

@@ -14,9 +14,11 @@ struct IngredientGroupView: View {
         Text(ingredientGroup.name)
         Spacer()
       }
-      HStack {
-        ForEach(selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }, id: \.self) {
-          IngredientTileView(ingredient: $0)          }
+      ScrollView(.horizontal) {
+        HStack {
+          ForEach(selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }, id: \.self) {
+            IngredientTileView(ingredient: $0)          }
+        }
       }
     }
     .padding()
@@ -25,7 +27,7 @@ struct IngredientGroupView: View {
 
 struct IngredientGroupView_Previews: PreviewProvider {
     static var previews: some View {
-      let group = IngredientGroup.alcohols
+      let group = IngredientGroup.common
         IngredientGroupView(ingredientGroup: group)
           .environment(\.injected, DependencyContainer.defaultValue)
     }

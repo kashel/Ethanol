@@ -29,6 +29,7 @@
 		DC5C4471256049F000C2AB17 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4470256049F000C2AB17 /* DependencyContainer.swift */; };
 		DC5C447625604CF200C2AB17 /* Interactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C447525604CF200C2AB17 /* Interactors.swift */; };
 		DC5C4486256061F000C2AB17 /* IngredientSelectionObservedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4485256061F000C2AB17 /* IngredientSelectionObservedModel.swift */; };
+		DC5C4492256069E600C2AB17 /* IngredientsSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4491256069E600C2AB17 /* IngredientsSelectionInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		DC5C4470256049F000C2AB17 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		DC5C447525604CF200C2AB17 /* Interactors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactors.swift; sourceTree = "<group>"; };
 		DC5C4485256061F000C2AB17 /* IngredientSelectionObservedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSelectionObservedModel.swift; sourceTree = "<group>"; };
+		DC5C4491256069E600C2AB17 /* IngredientsSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsSelectionInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 		97B00AAE2557207700D7C2F4 /* IngredientsSelection */ = {
 			isa = PBXGroup;
 			children = (
+				DC5C4490256069D000C2AB17 /* Interactors */,
 				97B00AC82557289200D7C2F4 /* Views */,
 				97B00ABB255722BC00D7C2F4 /* Models */,
 			);
@@ -248,6 +251,14 @@
 				DC5C447525604CF200C2AB17 /* Interactors.swift */,
 			);
 			path = Injected;
+			sourceTree = "<group>";
+		};
+		DC5C4490256069D000C2AB17 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				DC5C4491256069E600C2AB17 /* IngredientsSelectionInteractor.swift */,
+			);
+			path = Interactors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +403,7 @@
 				978090042557091B00CD66BB /* Unit.swift in Sources */,
 				97808FFC2557088F00CD66BB /* Indgredient.swift in Sources */,
 				DC5C445E256048FE00C2AB17 /* AppState.swift in Sources */,
+				DC5C4492256069E600C2AB17 /* IngredientsSelectionInteractor.swift in Sources */,
 				977E69422550910E00BAA48D /* EthanolApp.swift in Sources */,
 				DC5C4471256049F000C2AB17 /* DependencyContainer.swift in Sources */,
 				97B00AD22557290000D7C2F4 /* IngredientTileView.swift in Sources */,

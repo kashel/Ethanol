@@ -15,7 +15,7 @@ struct IngredientGroupView: View {
         Text(ingredientGroup.name)
         Spacer()
       }
-      ScrollView(.horizontal) {
+      ScrollView(.horizontal, showsIndicators: false) {
         HStack {
           ForEach(selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }, id: \.self) {
             let currentIngredient = $0

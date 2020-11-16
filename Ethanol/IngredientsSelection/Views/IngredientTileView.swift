@@ -9,7 +9,7 @@ struct IngredientTileView: View {
     ZStack {
       Image(ingredient.imageName)
         .resizable()
-        .aspectRatio(contentMode: .fit)
+        .aspectRatio(1, contentMode: .fit)
         .padding()
       VStack {
         Spacer()

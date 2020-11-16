@@ -1,42 +1,53 @@
 //
 
+import Combine
 import SwiftUI
 
 struct IngredientGroupView: View {
-  let ingredientGroup: IngredientGroup
-  let ingredients: [Ingredient]
+  @Environment(\.injected) private var injected: DependencyContainer
+  @State private var selection: IngredientSelectionObservedModel = .init()
   
-    var body: some View {
-      VStack {
+  let ingredientGroup: IngredientGroup
+  
+  var body: some View {
+    VStack {
+      HStack {
+        Text(ingredientGroup.name)
+        Spacer()
+      }
+      ScrollView(.horizontal, showsIndicators: false) {
         HStack {
-          Text(ingredientGroup.name)
-          Spacer()
-        }
-        ScrollView(.horizontal) {
-          HStack {
-            ForEach(ingredients, id: \.self) { ingredient in
-              if !ingredient.isSelected {
-                Button(action: {
-                  print("tapped on igredient")
-                }, label: {
-                  IngredientTileView(ingredient: ingredient)
-                })
+          ForEach(selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }, id: \.self) {
+            let currentIngredient = $0
+            IngredientTileView(ingredient: $0)
+              .onTapGesture {
+                select(ingredient: currentIngredient)
               }
-            }
           }
         }
       }
-      .padding()
     }
+    .padding()
+    .onReceive(update, perform: { selection = $0 })
+  }
 }
 
 struct IngredientGroupView_Previews: PreviewProvider {
     static var previews: some View {
-      let model = IngredientsModel()
-      let ingredientsRepository = LocalIngredientsRepository(model: model)
-      let group = IngredientGroup.alcohols
-      let ingredients = ingredientsRepository.getIngredients(for: group)
-        IngredientGroupView(ingredientGroup: group, ingredients: ingredients)
+      let group = IngredientGroup.common
+        IngredientGroupView(ingredientGroup: group)
+          .environment(\.injected, DependencyContainer.defaultValue)
     }
 }
- 
+
+private extension IngredientGroupView {
+  func select(ingredient: Ingredient) {
+    injected.interactors.ingredientsSelection.select(ingredient: ingredient)
+  }
+}
+
+private extension IngredientGroupView {
+  var update: AnyPublisher<IngredientSelectionObservedModel, Never> {
+      injected.appState.updates(for: \.ingredientSelection)
+  }
+}

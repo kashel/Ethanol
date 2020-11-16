@@ -11,7 +11,14 @@ import SwiftUI
 struct EthanolApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      ContentView(dependencyContainer: makeDependencyContainer)
     }
+  }
+}
+
+private extension EthanolApp {
+  var makeDependencyContainer: DependencyContainer {
+    let appState = Store<AppState>(AppState())
+    return DependencyContainer(appState: appState, interactors: Interactors(appState: appState))
   }
 }

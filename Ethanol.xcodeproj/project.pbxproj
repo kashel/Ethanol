@@ -20,12 +20,16 @@
 		97B00AA725570E5B00D7C2F4 /* CocktailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AA625570E5B00D7C2F4 /* CocktailRepository.swift */; };
 		97B00AB0255720BF00D7C2F4 /* IngredientsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AAF255720BF00D7C2F4 /* IngredientsSelectionView.swift */; };
 		97B00AB7255722A000D7C2F4 /* IngredientGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AB6255722A000D7C2F4 /* IngredientGroup.swift */; };
-		97B00AC12557237300D7C2F4 /* IngredientsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AC02557237300D7C2F4 /* IngredientsRepository.swift */; };
 		97B00ACD255728D700D7C2F4 /* IngredientGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00ACC255728D700D7C2F4 /* IngredientGroupView.swift */; };
 		97B00AD22557290000D7C2F4 /* IngredientTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AD12557290000D7C2F4 /* IngredientTileView.swift */; };
 		97B00AD72557290D00D7C2F4 /* SelectedIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AD62557290D00D7C2F4 /* SelectedIngredientsView.swift */; };
-		97B00AE02557417E00D7C2F4 /* IngredientGroupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00ADF2557417E00D7C2F4 /* IngredientGroupInteractor.swift */; };
 		DC0F3B3C255732BF009E449B /* QStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F3B3B255732BF009E449B /* QStack.swift */; };
+		DC5C44572560489500C2AB17 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C44562560489500C2AB17 /* Store.swift */; };
+		DC5C445E256048FE00C2AB17 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C445D256048FE00C2AB17 /* AppState.swift */; };
+		DC5C4471256049F000C2AB17 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4470256049F000C2AB17 /* DependencyContainer.swift */; };
+		DC5C447625604CF200C2AB17 /* Interactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C447525604CF200C2AB17 /* Interactors.swift */; };
+		DC5C4486256061F000C2AB17 /* IngredientSelectionObservedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4485256061F000C2AB17 /* IngredientSelectionObservedModel.swift */; };
+		DC5C4492256069E600C2AB17 /* IngredientsSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C4491256069E600C2AB17 /* IngredientsSelectionInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,12 +69,16 @@
 		97B00AA625570E5B00D7C2F4 /* CocktailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailRepository.swift; sourceTree = "<group>"; };
 		97B00AAF255720BF00D7C2F4 /* IngredientsSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsSelectionView.swift; sourceTree = "<group>"; };
 		97B00AB6255722A000D7C2F4 /* IngredientGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientGroup.swift; sourceTree = "<group>"; };
-		97B00AC02557237300D7C2F4 /* IngredientsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsRepository.swift; sourceTree = "<group>"; };
 		97B00ACC255728D700D7C2F4 /* IngredientGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientGroupView.swift; sourceTree = "<group>"; };
 		97B00AD12557290000D7C2F4 /* IngredientTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTileView.swift; sourceTree = "<group>"; };
 		97B00AD62557290D00D7C2F4 /* SelectedIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedIngredientsView.swift; sourceTree = "<group>"; };
-		97B00ADF2557417E00D7C2F4 /* IngredientGroupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientGroupInteractor.swift; sourceTree = "<group>"; };
 		DC0F3B3B255732BF009E449B /* QStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QStack.swift; sourceTree = "<group>"; };
+		DC5C44562560489500C2AB17 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		DC5C445D256048FE00C2AB17 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		DC5C4470256049F000C2AB17 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		DC5C447525604CF200C2AB17 /* Interactors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactors.swift; sourceTree = "<group>"; };
+		DC5C4485256061F000C2AB17 /* IngredientSelectionObservedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSelectionObservedModel.swift; sourceTree = "<group>"; };
+		DC5C4491256069E600C2AB17 /* IngredientsSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsSelectionInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,13 +129,15 @@
 		977E69402550910E00BAA48D /* Ethanol */ = {
 			isa = PBXGroup;
 			children = (
+				DC5C445C256048E000C2AB17 /* Injected */,
+				DC5C445B2560489C00C2AB17 /* System */,
 				DC0F3B3A25573297009E449B /* CustomViews */,
-				97B00AAE2557207700D7C2F4 /* IngredientsSelection */,
 				97B00AA525570E3800D7C2F4 /* Repository */,
 				97B00A9F25570CA300D7C2F4 /* API */,
 				97808FFA2557084F00CD66BB /* Models */,
 				977E69412550910E00BAA48D /* EthanolApp.swift */,
 				977E69432550910E00BAA48D /* ContentView.swift */,
+				97B00AAE2557207700D7C2F4 /* IngredientsSelection */,
 				977E69452550910F00BAA48D /* Assets.xcassets */,
 				977E694A2550910F00BAA48D /* Info.plist */,
 				977E69472550910F00BAA48D /* Preview Content */,
@@ -189,9 +199,8 @@
 		97B00AAE2557207700D7C2F4 /* IngredientsSelection */ = {
 			isa = PBXGroup;
 			children = (
-				97B00ADE2557416300D7C2F4 /* Interactors */,
+				DC5C4490256069D000C2AB17 /* Interactors */,
 				97B00AC82557289200D7C2F4 /* Views */,
-				97B00ABF2557236200D7C2F4 /* Repository */,
 				97B00ABB255722BC00D7C2F4 /* Models */,
 			);
 			path = IngredientsSelection;
@@ -202,16 +211,9 @@
 			children = (
 				97808FFB2557088F00CD66BB /* Indgredient.swift */,
 				97B00AB6255722A000D7C2F4 /* IngredientGroup.swift */,
+				DC5C4485256061F000C2AB17 /* IngredientSelectionObservedModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		97B00ABF2557236200D7C2F4 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				97B00AC02557237300D7C2F4 /* IngredientsRepository.swift */,
-			);
-			path = Repository;
 			sourceTree = "<group>";
 		};
 		97B00AC82557289200D7C2F4 /* Views */ = {
@@ -225,20 +227,38 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		97B00ADE2557416300D7C2F4 /* Interactors */ = {
-			isa = PBXGroup;
-			children = (
-				97B00ADF2557417E00D7C2F4 /* IngredientGroupInteractor.swift */,
-			);
-			path = Interactors;
-			sourceTree = "<group>";
-		};
 		DC0F3B3A25573297009E449B /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
 				DC0F3B3B255732BF009E449B /* QStack.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		DC5C445B2560489C00C2AB17 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				DC5C44562560489500C2AB17 /* Store.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		DC5C445C256048E000C2AB17 /* Injected */ = {
+			isa = PBXGroup;
+			children = (
+				DC5C445D256048FE00C2AB17 /* AppState.swift */,
+				DC5C4470256049F000C2AB17 /* DependencyContainer.swift */,
+				DC5C447525604CF200C2AB17 /* Interactors.swift */,
+			);
+			path = Injected;
+			sourceTree = "<group>";
+		};
+		DC5C4490256069D000C2AB17 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				DC5C4491256069E600C2AB17 /* IngredientsSelectionInteractor.swift */,
+			);
+			path = Interactors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,18 +390,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5C4486256061F000C2AB17 /* IngredientSelectionObservedModel.swift in Sources */,
+				DC5C447625604CF200C2AB17 /* Interactors.swift in Sources */,
+				DC5C44572560489500C2AB17 /* Store.swift in Sources */,
 				97B00AA125570CB700D7C2F4 /* CocktailAPI.swift in Sources */,
 				977E69442550910E00BAA48D /* ContentView.swift in Sources */,
-				97B00AE02557417E00D7C2F4 /* IngredientGroupInteractor.swift in Sources */,
 				97B00AD72557290D00D7C2F4 /* SelectedIngredientsView.swift in Sources */,
-				97B00AC12557237300D7C2F4 /* IngredientsRepository.swift in Sources */,
 				97B00AB7255722A000D7C2F4 /* IngredientGroup.swift in Sources */,
 				97B00AA725570E5B00D7C2F4 /* CocktailRepository.swift in Sources */,
 				DC0F3B3C255732BF009E449B /* QStack.swift in Sources */,
 				97B00ACD255728D700D7C2F4 /* IngredientGroupView.swift in Sources */,
 				978090042557091B00CD66BB /* Unit.swift in Sources */,
 				97808FFC2557088F00CD66BB /* Indgredient.swift in Sources */,
+				DC5C445E256048FE00C2AB17 /* AppState.swift in Sources */,
+				DC5C4492256069E600C2AB17 /* IngredientsSelectionInteractor.swift in Sources */,
 				977E69422550910E00BAA48D /* EthanolApp.swift in Sources */,
+				DC5C4471256049F000C2AB17 /* DependencyContainer.swift in Sources */,
 				97B00AD22557290000D7C2F4 /* IngredientTileView.swift in Sources */,
 				97B00AB0255720BF00D7C2F4 /* IngredientsSelectionView.swift in Sources */,
 				97B00A9825570C3600D7C2F4 /* Cocktail.swift in Sources */,

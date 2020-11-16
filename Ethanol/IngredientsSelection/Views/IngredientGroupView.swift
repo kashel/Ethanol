@@ -17,6 +17,7 @@ struct IngredientGroupView: View {
       }
       ScrollView(.horizontal, showsIndicators: false) {
         HStack {
+          MoreIngredientsTile(ingredients: Array(selection.ingredients.filter{ $0.groups.contains(ingredientGroup)}))
           ForEach(selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }, id: \.self) {
             let currentIngredient = $0
             IngredientTileView(ingredient: $0)

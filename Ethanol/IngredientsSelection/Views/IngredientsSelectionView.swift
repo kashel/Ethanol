@@ -5,13 +5,14 @@ import Combine
 
 struct IngredientsSelectionView: View {
   @Environment(\.injected) private var injected: DependencyContainer
-  @State private var selection: IngredientSelectionObservedModel = .init()
 
   var body: some View {
     VStack {
-      ForEach(IngredientGroup.allCases, id: \.self) {
-        components(for: $0)
-      }
+      ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false, content: {
+        ForEach(IngredientGroup.allCases, id: \.self) {
+          components(for: $0)
+        }
+      })
     }
   }
 }

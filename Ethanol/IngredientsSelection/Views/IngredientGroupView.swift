@@ -17,7 +17,7 @@ struct IngredientGroupView: View {
       }
       ScrollView(.horizontal, showsIndicators: false) {
         HStack {
-          MoreIngredientsTile(ingredients: Array(selection.ingredients.filter{ $0.groups.contains(ingredientGroup)}))
+          components(for: ingredientGroup)
           ForEach(selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }, id: \.self) {
             let currentIngredient = $0
             IngredientTileView(ingredient: $0)
@@ -50,5 +50,12 @@ private extension IngredientGroupView {
 private extension IngredientGroupView {
   var update: AnyPublisher<IngredientSelectionObservedModel, Never> {
       injected.appState.updates(for: \.ingredientSelection)
+  }
+}
+
+private extension IngredientGroupView {
+  func components(for group: IngredientGroup) -> some View {
+    MoreIngredientsTile(ingredientGroup: ingredientGroup)
+      .environment(\.injected, injected)
   }
 }

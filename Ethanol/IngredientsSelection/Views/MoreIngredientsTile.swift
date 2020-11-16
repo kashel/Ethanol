@@ -1,7 +1,11 @@
 import SwiftUI
+import Combine
 
 struct MoreIngredientsTile: View {
-  let ingredients: [Ingredient]
+  @Environment(\.injected) private var injected: DependencyContainer
+  let ingredientGroup: IngredientGroup
+  @State private var selection: IngredientSelectionObservedModel = .init()
+  @State private var showingIngredientsGroup = false
   
   var body: some View {
     VStack {
@@ -11,8 +15,9 @@ struct MoreIngredientsTile: View {
           ForEach(0..<2) {
               let column = $0
               let index = row*2+column
+              let ingredients = selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }
               if index < ingredients.count {
-                let ingredient = ingredients[index]
+                let ingredient = Array(ingredients)[index]
                 Image(ingredient.imageName)
                   .resizable()
                   .aspectRatio(1, contentMode: .fit)
@@ -28,12 +33,27 @@ struct MoreIngredientsTile: View {
     .background(Color.green)
     .frame(width: 90, height: 90)
     .cornerRadius(10)
+    .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+      showingIngredientsGroup.toggle()
+    })
+    .onReceive(update, perform: { selection = $0 })
+    .sheet(isPresented: $showingIngredientsGroup, content: {
+      Text("test")
+    })
   }
 }
 
 struct MoreIngredientsTile_Previews: PreviewProvider {
   static var previews: some View {
-    var ingredients = IngredientSelectionObservedModel().ingredients
-    MoreIngredientsTile(ingredients: [ingredients.removeFirst(), ingredients.removeFirst(), ingredients.removeFirst()])
+    let group = IngredientGroup.common
+    IngredientGroupView(ingredientGroup: group)
+      .environment(\.injected, DependencyContainer.defaultValue)
+  }
+}
+
+
+private extension MoreIngredientsTile {
+  var update: AnyPublisher<IngredientSelectionObservedModel, Never> {
+      injected.appState.updates(for: \.ingredientSelection)
   }
 }

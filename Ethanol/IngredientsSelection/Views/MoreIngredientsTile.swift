@@ -33,9 +33,9 @@ struct MoreIngredientsTile: View {
     .background(Color.green)
     .frame(width: 90, height: 90)
     .cornerRadius(10)
-    .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+    .onTapGesture {
       showingIngredientsGroup.toggle()
-    })
+    }
     .onReceive(update, perform: { selection = $0 })
     .sheet(isPresented: $showingIngredientsGroup, content: {
       Text("test")
@@ -45,8 +45,8 @@ struct MoreIngredientsTile: View {
 
 struct MoreIngredientsTile_Previews: PreviewProvider {
   static var previews: some View {
-    let group = IngredientGroup.common
-    IngredientGroupView(ingredientGroup: group)
+    let group = IngredientGroup.alcohols
+    MoreIngredientsTile(ingredientGroup: group)
       .environment(\.injected, DependencyContainer.defaultValue)
   }
 }

@@ -3,7 +3,7 @@ struct IngredientSelectionObservedModel: Equatable {
 }
 
 private extension IngredientSelectionObservedModel {
-  static var allIngredients: Set<Ingredient>  {
+  static var allIngredients: [Ingredient]  {
     [Ingredient(name: "White rum", imageName: "white_rum", groups: [.alcohols]),
      Ingredient(name: "Tequila", imageName: "tequila", groups: [.alcohols]),
      Ingredient(name: "Malibu", imageName: "tequila", groups: [.alcohols]),

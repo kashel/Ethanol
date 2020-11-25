@@ -57,7 +57,7 @@ struct MoreIngredientsTile_Previews: PreviewProvider {
 }
 
 private extension MoreIngredientsTileView {
-  var ingredients: Set<Ingredient> {
+  var ingredients: [Ingredient] {
     selection.ingredients.filter {
       !$0.isSelected && $0.groups.contains(ingredientGroup)
     }

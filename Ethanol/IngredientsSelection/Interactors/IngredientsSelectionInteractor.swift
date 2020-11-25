@@ -1,6 +1,7 @@
 
 protocol IngredientsSelectionInteractor {
   func select(ingredient: Ingredient)
+  func deselect(ingredient: Ingredient)
 }
 
 struct BaseIngredientsSelectionInteractor: IngredientsSelectionInteractor {
@@ -11,12 +12,23 @@ struct BaseIngredientsSelectionInteractor: IngredientsSelectionInteractor {
   }
 
   func select(ingredient: Ingredient) {
-    guard var mutableIngredient = appState[\.ingredientSelection.ingredients].first(where: {$0 == ingredient}) else {
+    guard var index = appState[\.ingredientSelection.ingredients].firstIndex(where: {$0 == ingredient}) else {
       return
     }
-    appState[\.ingredientSelection.ingredients].remove(mutableIngredient)
+    var mutableIngredient = appState[\.ingredientSelection.ingredients][index]
+    appState[\.ingredientSelection.ingredients].remove(at: index)
     mutableIngredient.isSelected = true
-    appState[\.ingredientSelection.ingredients].insert(mutableIngredient)
+    appState[\.ingredientSelection.ingredients].insert(mutableIngredient, at: index)
+  }
+
+  func deselect(ingredient: Ingredient) {
+    guard var index = appState[\.ingredientSelection.ingredients].firstIndex(where: {$0 == ingredient}) else {
+      return
+    }
+    var mutableIngredient = appState[\.ingredientSelection.ingredients][index]
+    appState[\.ingredientSelection.ingredients].remove(at: index)
+    mutableIngredient.isSelected = false
+    appState[\.ingredientSelection.ingredients].insert(mutableIngredient, at: index)
   }
 
 

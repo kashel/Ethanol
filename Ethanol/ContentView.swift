@@ -15,8 +15,14 @@ struct ContentView: View {
   }
   
   var body: some View {
+    VStack {
+    ScrollView {
     IngredientsSelectionView()
       .environment(\.injected, dependencyContainer)
+    }
+    SelectedIngredientsView()
+      .environment(\.injected, dependencyContainer)
+    }
   }
 }
 

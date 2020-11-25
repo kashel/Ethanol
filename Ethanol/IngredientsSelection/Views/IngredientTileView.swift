@@ -4,6 +4,7 @@ import SwiftUI
 
 struct IngredientTileView: View {
   let ingredient: Ingredient
+  @State var tileSize = TileSize()
   
   var body: some View {
     ZStack {

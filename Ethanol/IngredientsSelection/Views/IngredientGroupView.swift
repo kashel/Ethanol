@@ -1,5 +1,3 @@
-//
-
 import Combine
 import SwiftUI
 
@@ -55,7 +53,7 @@ private extension IngredientGroupView {
 
 private extension IngredientGroupView {
   func components(for group: IngredientGroup) -> some View {
-    MoreIngredientsTile(ingredientGroup: ingredientGroup)
+    MoreIngredientsTileView(ingredientGroup: ingredientGroup)
       .environment(\.injected, injected)
   }
 }

@@ -12,7 +12,7 @@ private extension IngredientSelectionObservedModel {
      Ingredient(name: "White wine", imageName: "white_rum", groups: [.alcohols]),
      Ingredient(name: "Vodka", imageName: "tequila", groups: [.alcohols, .common]),
      Ingredient(name: "Orange", imageName: "orange", groups: [.fruits, .common]),
-     Ingredient(name: "Apple", imageName: "orange", groups: [.fruits]),
+     Ingredient(name: "Apple", imageName: "orange", groups: [.fruits, .common]),
      Ingredient(name: "Banana", imageName: "orange", groups: [.fruits])]
   }
 }

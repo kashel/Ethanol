@@ -7,8 +7,13 @@ struct DependencyContainer {
 
 extension DependencyContainer: EnvironmentKey {
   static var defaultValue: DependencyContainer {
-    let appState = Store<AppState>(AppState())
-    return DependencyContainer(appState: appState, interactors: Interactors(appState: appState))
+    let state = AppState()
+    let appState = Store<AppState>(state)
+    let interactors = Interactors(appState: appState)
+    interactors.ingredientsSelection.select(ingredient: state.ingredientSelection.ingredients[0])
+    interactors.ingredientsSelection.select(ingredient: state.ingredientSelection.ingredients[1])
+    interactors.ingredientsSelection.select(ingredient: state.ingredientSelection.ingredients[2])
+    return DependencyContainer(appState: appState, interactors: interactors)
   }
 }
 

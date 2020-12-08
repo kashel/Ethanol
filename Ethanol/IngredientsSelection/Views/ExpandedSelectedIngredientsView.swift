@@ -13,7 +13,7 @@ struct ExpandedSelectedIngredientsView: View {
       NavigationView {
         List {
           ForEach(ingredients, id: \.self) {
-            Text($0.name)
+            cell(with: $0)
           }
           .onDelete(perform: { indexSet in
             guard let offset = indexSet.first else {
@@ -30,9 +30,22 @@ struct ExpandedSelectedIngredientsView: View {
     }
 }
 
+private extension ExpandedSelectedIngredientsView {
+  func cell(with ingredient: Ingredient) -> some View {
+    HStack {
+      Image(ingredient.imageName)
+        .resizable()
+        .aspectRatio(1, contentMode: .fit)
+        .frame(width: 32, height: 32)
+      Text(ingredient.name)
+    }
+  }
+}
+
 struct SelectedIngredientsView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpandedSelectedIngredientsView()
+      ExpandedSelectedIngredientsView()
+        .environment(\.injected, DependencyContainer.defaultValue)
     }
 }
 

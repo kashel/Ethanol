@@ -12,26 +12,22 @@ struct BaseIngredientsSelectionInteractor: IngredientsSelectionInteractor {
   }
 
   func select(ingredient: Ingredient) {
-    guard var index = appState[\.ingredientSelection.ingredients].firstIndex(where: {$0 == ingredient}) else {
-      return
-    }
-    var mutableIngredient = appState[\.ingredientSelection.ingredients][index]
-    appState[\.ingredientSelection.ingredients].remove(at: index)
-    mutableIngredient.isSelected = true
-    appState[\.ingredientSelection.ingredients].insert(mutableIngredient, at: index)
+    change(ingredient: ingredient, isSelected: true)
   }
 
   func deselect(ingredient: Ingredient) {
-    guard var index = appState[\.ingredientSelection.ingredients].firstIndex(where: {$0 == ingredient}) else {
+    change(ingredient: ingredient, isSelected: false)
+  }
+  
+  private func change(ingredient: Ingredient, isSelected: Bool) {
+    guard let index = appState[\.ingredientSelection.ingredients].firstIndex(where: {$0 == ingredient}) else {
       return
     }
     var mutableIngredient = appState[\.ingredientSelection.ingredients][index]
     appState[\.ingredientSelection.ingredients].remove(at: index)
-    mutableIngredient.isSelected = false
+    mutableIngredient.isSelected = isSelected
     appState[\.ingredientSelection.ingredients].insert(mutableIngredient, at: index)
   }
-
-
 }
 
 

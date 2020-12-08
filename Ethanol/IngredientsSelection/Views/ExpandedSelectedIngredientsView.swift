@@ -22,7 +22,7 @@ struct ExpandedSelectedIngredientsView: View {
             injected.interactors.ingredientsSelection.deselect(ingredient: ingredients[offset])
           })
         }
-        .navigationBarTitle("Test")
+        .navigationBarTitle("Selected ingredients")
         .navigationBarTitleDisplayMode(.large)
         .environment(\.editMode, $editMode)
       }
@@ -42,7 +42,7 @@ private extension ExpandedSelectedIngredientsView {
   }
 }
 
-struct SelectedIngredientsView_Previews: PreviewProvider {
+struct ExpandedSelectedIngredientsView_Previews: PreviewProvider {
     static var previews: some View {
       ExpandedSelectedIngredientsView()
         .environment(\.injected, DependencyContainer.defaultValue)

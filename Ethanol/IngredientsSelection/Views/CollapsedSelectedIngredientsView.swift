@@ -12,32 +12,26 @@ struct CollapsedSelectedIngredientsView: View {
     var body: some View {
       GeometryReader { geometryProxy in
         FlexibleView(
-          availableWidth: geometryProxy.size.width, data: [
-            "Here’s", "to", "the", "crazy", "ones", "the", "misfits", "the", "rebels", "the", "troublemakers", "the", "round", "pegs", "in", "the", "square", "holes", "the", "ones", "who", "see", "things", "differently", "they’re", "not", "fond", "of", "rules"
-          ],
+          availableWidth: geometryProxy.size.width, data: ingredients.map(\.name),
             spacing: 15,
             alignment: .leading
           ) { item in
-            Text(verbatim: item)
-              .padding(8)
-              .background(
-                RoundedRectangle(cornerRadius: 8)
-                  .fill(Color.gray.opacity(0.2))
-               )
+          tag(with: item)
           }
-      }.padding()
+      }
+      .padding()
+      .onReceive(update, perform: { selection = $0 })
     }
 }
 
 private extension CollapsedSelectedIngredientsView {
-  func cell(with ingredient: Ingredient) -> some View {
-    HStack {
-      Image(ingredient.imageName)
-        .resizable()
-        .aspectRatio(1, contentMode: .fit)
-        .frame(width: 32, height: 32)
-      Text(ingredient.name)
-    }
+  func tag(with ingredientName: String) -> some View {
+    Text(ingredientName)
+      .padding(8)
+      .background(
+        RoundedRectangle(cornerRadius: 14)
+          .fill(Color.green.opacity(0.2))
+       )
   }
 }
 

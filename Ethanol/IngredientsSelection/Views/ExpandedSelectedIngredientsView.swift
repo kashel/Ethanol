@@ -3,7 +3,7 @@
 import SwiftUI
 import Combine
 
-struct SelectedIngredientsView: View {
+struct ExpandedSelectedIngredientsView: View {
   @Environment(\.injected) private var injected: DependencyContainer
   @State private var selection: IngredientSelectionObservedModel = .init()
 
@@ -32,17 +32,17 @@ struct SelectedIngredientsView: View {
 
 struct SelectedIngredientsView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectedIngredientsView()
+        ExpandedSelectedIngredientsView()
     }
 }
 
-private extension SelectedIngredientsView {
+private extension ExpandedSelectedIngredientsView {
   var update: AnyPublisher<IngredientSelectionObservedModel, Never> {
       injected.appState.updates(for: \.ingredientSelection)
   }
 }
 
-private extension SelectedIngredientsView {
+private extension ExpandedSelectedIngredientsView {
   var ingredients: [Ingredient] {
     selection.ingredients.filter(\.isSelected)
   }

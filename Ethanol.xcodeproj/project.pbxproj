@@ -24,7 +24,7 @@
 		97B00AB7255722A000D7C2F4 /* IngredientGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AB6255722A000D7C2F4 /* IngredientGroup.swift */; };
 		97B00ACD255728D700D7C2F4 /* IngredientGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00ACC255728D700D7C2F4 /* IngredientGroupView.swift */; };
 		97B00AD22557290000D7C2F4 /* IngredientTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AD12557290000D7C2F4 /* IngredientTileView.swift */; };
-		97B00AD72557290D00D7C2F4 /* SelectedIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AD62557290D00D7C2F4 /* SelectedIngredientsView.swift */; };
+		97B00AD72557290D00D7C2F4 /* ExpandedSelectedIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AD62557290D00D7C2F4 /* ExpandedSelectedIngredientsView.swift */; };
 		DC0F3B3C255732BF009E449B /* QStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F3B3B255732BF009E449B /* QStack.swift */; };
 		DC5C44572560489500C2AB17 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C44562560489500C2AB17 /* Store.swift */; };
 		DC5C445E256048FE00C2AB17 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C445D256048FE00C2AB17 /* AppState.swift */; };
@@ -75,7 +75,7 @@
 		97B00AB6255722A000D7C2F4 /* IngredientGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientGroup.swift; sourceTree = "<group>"; };
 		97B00ACC255728D700D7C2F4 /* IngredientGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientGroupView.swift; sourceTree = "<group>"; };
 		97B00AD12557290000D7C2F4 /* IngredientTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTileView.swift; sourceTree = "<group>"; };
-		97B00AD62557290D00D7C2F4 /* SelectedIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedIngredientsView.swift; sourceTree = "<group>"; };
+		97B00AD62557290D00D7C2F4 /* ExpandedSelectedIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedSelectedIngredientsView.swift; sourceTree = "<group>"; };
 		DC0F3B3B255732BF009E449B /* QStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QStack.swift; sourceTree = "<group>"; };
 		DC5C44562560489500C2AB17 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		DC5C445D256048FE00C2AB17 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 				97B00AAF255720BF00D7C2F4 /* IngredientsSelectionView.swift */,
 				97B00ACC255728D700D7C2F4 /* IngredientGroupView.swift */,
 				97B00AD12557290000D7C2F4 /* IngredientTileView.swift */,
-				97B00AD62557290D00D7C2F4 /* SelectedIngredientsView.swift */,
+				97B00AD62557290D00D7C2F4 /* ExpandedSelectedIngredientsView.swift */,
 				97283F672563079E003527C5 /* MoreIngredientsTileView.swift */,
 				9721CCD0256EE75000BDF884 /* TileSize.swift */,
 			);
@@ -401,7 +401,7 @@
 				DC5C44572560489500C2AB17 /* Store.swift in Sources */,
 				97B00AA125570CB700D7C2F4 /* CocktailAPI.swift in Sources */,
 				977E69442550910E00BAA48D /* ContentView.swift in Sources */,
-				97B00AD72557290D00D7C2F4 /* SelectedIngredientsView.swift in Sources */,
+				97B00AD72557290D00D7C2F4 /* ExpandedSelectedIngredientsView.swift in Sources */,
 				97B00AB7255722A000D7C2F4 /* IngredientGroup.swift in Sources */,
 				97B00AA725570E5B00D7C2F4 /* CocktailRepository.swift in Sources */,
 				DC0F3B3C255732BF009E449B /* QStack.swift in Sources */,

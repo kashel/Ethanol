@@ -20,7 +20,7 @@ struct ContentView: View {
     IngredientsSelectionView()
       .environment(\.injected, dependencyContainer)
     }
-    SelectedIngredientsView()
+    ExpandedSelectedIngredientsView()
       .environment(\.injected, dependencyContainer)
     }
   }

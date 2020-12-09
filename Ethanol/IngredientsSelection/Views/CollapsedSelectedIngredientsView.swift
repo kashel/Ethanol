@@ -18,6 +18,7 @@ struct CollapsedSelectedIngredientsView: View {
           ) { item in
           tag(with: item)
           }
+        .fixedSize(horizontal: false, vertical: true)
       }
       .padding()
       .onReceive(update, perform: { selection = $0 })

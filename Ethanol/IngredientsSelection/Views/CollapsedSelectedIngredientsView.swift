@@ -10,17 +10,13 @@ struct CollapsedSelectedIngredientsView: View {
   @State private var editMode = EditMode.active
   
     var body: some View {
-      GeometryReader { geometryProxy in
-        FlexibleView(
-          availableWidth: geometryProxy.size.width, data: ingredients.map(\.name),
-            spacing: 15,
-            alignment: .leading
-          ) { item in
-          tag(with: item)
+      ScrollView(.horizontal) {
+        HStack {
+          ForEach(selection.ingredients.filter(\.isSelected), id: \.self) {
+            tag(with: $0.name)
           }
-        .fixedSize(horizontal: false, vertical: true)
+        }
       }
-      .padding()
       .onReceive(update, perform: { selection = $0 })
     }
 }

@@ -5,7 +5,6 @@ struct MoreIngredientsTileView: View {
   @Environment(\.injected) private var injected: DependencyContainer
   let ingredientGroup: IngredientGroup
   @State private var selection: IngredientSelectionObservedModel = .init()
-  @State private var showingIngredientsGroup = false
   
   @State private var tileSize = TileSize()
   
@@ -39,12 +38,9 @@ struct MoreIngredientsTileView: View {
     .background(Color.green)
     .cornerRadius(tileSize.cornerRadius)
     .onTapGesture {
-      showingIngredientsGroup.toggle()
+      injected.interactors.activeSheet.present(.moreIngredients(group: ingredientGroup))
     }
     .onReceive(update, perform: { selection = $0 })
-    .sheet(isPresented: $showingIngredientsGroup, content: {
-      Text("test")
-    })
   }
 }
 

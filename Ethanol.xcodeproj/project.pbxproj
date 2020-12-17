@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9721CCD1256EE75000BDF884 /* TileSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721CCD0256EE75000BDF884 /* TileSize.swift */; };
 		97283F682563079E003527C5 /* MoreIngredientsTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97283F672563079E003527C5 /* MoreIngredientsTileView.swift */; };
+		974389AC258C0881008BC321 /* IngredientsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974389AB258C0881008BC321 /* IngredientsListView.swift */; };
+		974389B1258C1786008BC321 /* ActiveSheetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974389B0258C1786008BC321 /* ActiveSheetInteractor.swift */; };
 		97768E5F258007AA00E64532 /* CollapsedSelectedIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768E5E258007AA00E64532 /* CollapsedSelectedIngredientsView.swift */; };
 		97768E6925800D0E00E64532 /* View+readSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768E6825800D0E00E64532 /* View+readSize.swift */; };
 		977E69422550910E00BAA48D /* EthanolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E69412550910E00BAA48D /* EthanolApp.swift */; };
@@ -56,6 +58,8 @@
 /* Begin PBXFileReference section */
 		9721CCD0256EE75000BDF884 /* TileSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSize.swift; sourceTree = "<group>"; };
 		97283F672563079E003527C5 /* MoreIngredientsTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreIngredientsTileView.swift; sourceTree = "<group>"; };
+		974389AB258C0881008BC321 /* IngredientsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsListView.swift; sourceTree = "<group>"; };
+		974389B0258C1786008BC321 /* ActiveSheetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSheetInteractor.swift; sourceTree = "<group>"; };
 		97768E5E258007AA00E64532 /* CollapsedSelectedIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsedSelectedIngredientsView.swift; sourceTree = "<group>"; };
 		97768E6825800D0E00E64532 /* View+readSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+readSize.swift"; sourceTree = "<group>"; };
 		977E693E2550910E00BAA48D /* Ethanol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ethanol.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +238,7 @@
 				97283F672563079E003527C5 /* MoreIngredientsTileView.swift */,
 				9721CCD0256EE75000BDF884 /* TileSize.swift */,
 				97768E5E258007AA00E64532 /* CollapsedSelectedIngredientsView.swift */,
+				974389AB258C0881008BC321 /* IngredientsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				DC5C4491256069E600C2AB17 /* IngredientsSelectionInteractor.swift */,
+				974389B0258C1786008BC321 /* ActiveSheetInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 				97768E6925800D0E00E64532 /* View+readSize.swift in Sources */,
 				97B00AA125570CB700D7C2F4 /* CocktailAPI.swift in Sources */,
 				97768E5F258007AA00E64532 /* CollapsedSelectedIngredientsView.swift in Sources */,
+				974389B1258C1786008BC321 /* ActiveSheetInteractor.swift in Sources */,
 				977E69442550910E00BAA48D /* ContentView.swift in Sources */,
 				97B00AD72557290D00D7C2F4 /* ExpandedSelectedIngredientsView.swift in Sources */,
 				97B00AB7255722A000D7C2F4 /* IngredientGroup.swift in Sources */,
@@ -417,6 +424,7 @@
 				97283F682563079E003527C5 /* MoreIngredientsTileView.swift in Sources */,
 				97B00ACD255728D700D7C2F4 /* IngredientGroupView.swift in Sources */,
 				978090042557091B00CD66BB /* Unit.swift in Sources */,
+				974389AC258C0881008BC321 /* IngredientsListView.swift in Sources */,
 				97808FFC2557088F00CD66BB /* Indgredient.swift in Sources */,
 				DC5C445E256048FE00C2AB17 /* AppState.swift in Sources */,
 				DC5C4492256069E600C2AB17 /* IngredientsSelectionInteractor.swift in Sources */,

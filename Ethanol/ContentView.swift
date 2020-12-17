@@ -11,6 +11,8 @@ import Combine
 struct ContentView: View {
   @Environment(\.injected) private var injected: DependencyContainer
   private let tagsSectionHeight: CGFloat = 80
+  @State private var activeSheet: Sheet?
+  @State private var showSheet: Bool = false
   
   var body: some View {
     GeometryReader { geometry in
@@ -23,14 +25,28 @@ struct ContentView: View {
           }
           .frame(height: geometry.size.height - tagsSectionHeight)
           .background(Color.blue)
-          CollapsedSelectedIngredientsView()
-            .environment(\.injected, injected)
-            .padding()
-            .frame(width: geometry.size.width, height: tagsSectionHeight)
+          HStack {
+            CollapsedSelectedIngredientsView()
+              .environment(\.injected, injected)
+            Button("strzałka") {
+              injected.interactors.activeSheet.present(.selectedIngredients)
+            }
+          }
+          .padding()
+          .frame(width: geometry.size.width, height: tagsSectionHeight)
         }
       }
       .edgesIgnoringSafeArea([.leading, .trailing, .bottom])
     }
+    .onReceive(update, perform: { activeSheet = $0 })
+    .sheet(item: $activeSheet, content: { sheet in
+      switch sheet {
+        case .moreIngredients(let ingredientGroup):
+          IngredientsListView(ingredientGroup: ingredientGroup)
+      case .selectedIngredients:
+        ExpandedSelectedIngredientsView().environment(\.injected, injected)
+      }
+    })
   }
 }
 
@@ -38,12 +54,12 @@ struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
       .environment(\.injected, DependencyContainer.defaultValue)
-
+    
   }
 }
 
 private extension ContentView {
-  var update: AnyPublisher<IngredientSelectionObservedModel, Never> {
-      injected.appState.updates(for: \.ingredientSelection)
+  var update: AnyPublisher<Sheet?, Never> {
+    injected.appState.updates(for: \.activeSheet)
   }
 }

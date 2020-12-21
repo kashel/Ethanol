@@ -28,8 +28,10 @@ struct ContentView: View {
           HStack {
             CollapsedSelectedIngredientsView()
               .environment(\.injected, injected)
-            Button("strzałka") {
+            Button(action: {
               injected.interactors.activeSheet.present(.selectedIngredients)
+            }) {
+              Image(systemName: "arrow.up.backward.and.arrow.down.forward")
             }
           }
           .padding()

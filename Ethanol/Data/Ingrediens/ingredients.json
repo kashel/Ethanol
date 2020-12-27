@@ -1,7 +1,7 @@
 [
   {
     "name": "sugar",
-    "groups": ["common"]
+    "groups": ["common", "sweets"]
   },
   {
     "name": "black salt",
@@ -42,5 +42,45 @@
   {
     "name": "mint",
     "groups": ["herbs"]
+  },
+  {
+    "name": "peppermint schnapps",
+    "groups": ["alcohols"]
+  },
+  {
+    "name": "white rum",
+    "groups": ["alcohols"]
+  },
+  {
+    "name": "tequila",
+    "groups": ["alcohols"]
+  },
+  {
+    "name": "gin",
+    "groups": ["alcohols"]
+  },
+  {
+    "name": "champagne",
+    "groups": ["alcohols"]
+  },
+  {
+    "name": "vodka",
+    "groups": ["alcohols"]
+  },
+  {
+    "name": "hot chocolate",
+    "groups": ["sweets"]
+  },
+  {
+    "name": "chocolate sprinkles",
+    "groups": ["sweets", "decors"]
+  },
+  {
+    "name": "whipped cream",
+    "groups": ["decors"]
+  },
+  {
+    "name": "orange juice",
+    "groups": ["juices"]
   },
 ]

@@ -83,4 +83,20 @@
     "name": "orange juice",
     "groups": ["juices"]
   },
+  {
+    "name": "peach snapps",
+    "groups": ["syrups"]
+  },
+  {
+    "name": "baileys",
+    "groups": ["syrups"]
+  },
+  {
+    "name": "blue curacao",
+    "groups": ["syrups"]
+  },
+  {
+    "name": "grenadine",
+    "groups": ["syrups"]
+  },
 ]

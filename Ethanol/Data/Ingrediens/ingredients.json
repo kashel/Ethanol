@@ -4,7 +4,23 @@
     "groups": ["common"]
   },
   {
+    "name": "black salt",
+    "groups": ["common"]
+  },
+  {
+    "name": "milk",
+    "groups": ["common"]
+  },
+  {
+    "name": "ice",
+    "groups": ["common"]
+  },
+  {
     "name": "green mango",
+    "groups": ["fruits"]
+  },
+  {
+    "name": "mango",
     "groups": ["fruits"]
   },
   {
@@ -12,11 +28,19 @@
     "groups": ["spices"]
   },
   {
+    "name": "cardamon powder",
+    "groups": ["spices"]
+  },
+  {
+    "name": "ginger powder",
+    "groups": ["spices"]
+  },
+  {
+    "name": "saffron strands",
+    "groups": ["spices"]
+  },
+  {
     "name": "mint",
     "groups": ["herbs"]
   },
-  {
-    "name": "black salt",
-    "groups": ["common"]
-  }
 ]

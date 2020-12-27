@@ -32,6 +32,7 @@
 		97F9B2622598E8AC00632554 /* ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 97F9B2612598E8AC00632554 /* ingredients.json */; };
 		97F9B26E2598EBC000632554 /* IngredientDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9B26D2598EBC000632554 /* IngredientDTO.swift */; };
 		97F9B27B2598EC5500632554 /* IngredientDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9B27A2598EC5500632554 /* IngredientDTOMapper.swift */; };
+		97F9B2802598F86B00632554 /* Drinks in Resources */ = {isa = PBXBuildFile; fileRef = 97F9B27F2598F86B00632554 /* Drinks */; };
 		DC0F3B3C255732BF009E449B /* QStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F3B3B255732BF009E449B /* QStack.swift */; };
 		DC5C44572560489500C2AB17 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C44562560489500C2AB17 /* Store.swift */; };
 		DC5C445E256048FE00C2AB17 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C445D256048FE00C2AB17 /* AppState.swift */; };
@@ -90,6 +91,7 @@
 		97F9B2612598E8AC00632554 /* ingredients.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ingredients.json; sourceTree = "<group>"; };
 		97F9B26D2598EBC000632554 /* IngredientDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDTO.swift; sourceTree = "<group>"; };
 		97F9B27A2598EC5500632554 /* IngredientDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDTOMapper.swift; sourceTree = "<group>"; };
+		97F9B27F2598F86B00632554 /* Drinks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Drinks; sourceTree = "<group>"; };
 		DC0F3B3B255732BF009E449B /* QStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QStack.swift; sourceTree = "<group>"; };
 		DC5C44562560489500C2AB17 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		DC5C445D256048FE00C2AB17 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		97F9B2602598E88700632554 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				97F9B27F2598F86B00632554 /* Drinks */,
 				97F9B2692598EB4200632554 /* Ingrediens */,
 			);
 			path = Data;
@@ -408,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				977E69492550910F00BAA48D /* Preview Assets.xcassets in Resources */,
+				97F9B2802598F86B00632554 /* Drinks in Resources */,
 				97F9B2622598E8AC00632554 /* ingredients.json in Resources */,
 				977E69462550910F00BAA48D /* Assets.xcassets in Resources */,
 			);

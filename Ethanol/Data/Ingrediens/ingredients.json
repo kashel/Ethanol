@@ -1,0 +1,22 @@
+[
+  {
+    "name": "sugar",
+    "groups": ["common"]
+  },
+  {
+    "name": "green mango",
+    "groups": ["fruits"]
+  },
+  {
+    "name": "cardamon",
+    "groups": ["spices"]
+  },
+  {
+    "name": "mint",
+    "groups": ["herbs"]
+  },
+  {
+    "name": "black salt",
+    "groups": ["common"]
+  }
+]

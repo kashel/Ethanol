@@ -20,6 +20,10 @@
     "groups": ["common"]
   },
   {
+    "name": "sparkling water",
+    "groups": ["common"]
+  },
+  {
     "name": "green mango",
     "groups": ["fruits"]
   },
@@ -101,6 +105,10 @@
   },
   {
     "name": "sugar juice",
+    "groups": ["juices"]
+  },
+  {
+    "name": "lime juice",
     "groups": ["juices"]
   },
   {

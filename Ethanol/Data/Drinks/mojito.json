@@ -11,22 +11,22 @@
         {
             "quantity": "6",
             "measure": "ounces",
-            "ingredient": "light rum"
+            "ingredient": "white rum"
         },
         {
             "quantity": "4",
-            "measure": "",
-            "ingredient": "lime wedges"
+            "measure": "wedges",
+            "ingredient": "lime"
         },
         {
             "quantity": "12",
-            "measure": "",
-            "ingredient": "mint sprigs, or spear"
+            "measure": "sprigs",
+            "ingredient": "mint"
         },
         {
             "quantity": "6",
             "measure": "tablespoons",
-            "ingredient": "fresh lime juice"
+            "ingredient": "lime juice"
         },
         {
             "quantity": "4",
@@ -36,7 +36,7 @@
         {
             "quantity": "",
             "measure": "",
-            "ingredient": "club soda"
+            "ingredient": "sparkling water"
         }
     ],
     "directions": [

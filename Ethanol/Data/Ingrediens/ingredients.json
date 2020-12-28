@@ -16,11 +16,23 @@
     "groups": ["common"]
   },
   {
+    "name": "egg white",
+    "groups": ["common"]
+  },
+  {
     "name": "green mango",
     "groups": ["fruits"]
   },
   {
     "name": "mango",
+    "groups": ["fruits"]
+  },
+  {
+    "name": "lemon",
+    "groups": ["fruits"]
+  },
+  {
+    "name": "cherries",
     "groups": ["fruits"]
   },
   {
@@ -84,6 +96,14 @@
     "groups": ["juices"]
   },
   {
+    "name": "lemon juice",
+    "groups": ["juices"]
+  },
+  {
+    "name": "sugar juice",
+    "groups": ["juices"]
+  },
+  {
     "name": "peach snapps",
     "groups": ["syrups"]
   },
@@ -99,4 +119,12 @@
     "name": "grenadine",
     "groups": ["syrups"]
   },
+  {
+    "name": "amaretto",
+    "groups": ["alcohols"]
+  },
+  {
+    "name": "angostura bitter",
+    "groups": ["alcohols"]
+  }
 ]

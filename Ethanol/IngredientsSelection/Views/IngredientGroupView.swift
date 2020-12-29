@@ -8,21 +8,26 @@ struct IngredientGroupView: View {
   let ingredientGroup: IngredientGroup
   
   var body: some View {
-    VStack {
+    VStack(alignment: .leading) {
       HStack {
         Text(ingredientGroup.name)
         Spacer()
       }
-      ScrollView(.horizontal, showsIndicators: false) {
-        HStack {
+      let ingredients = selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }
+      let lineCapacity = 4
+      let numberOfLines = countNumberOfLines(ingredientsCount: ingredients.count, lineCapacity: lineCapacity)
+      let numberOfItemsFirstLine = (numberOfLines > 1) ? lineCapacity : ingredients.count
+      let hasMore = (ingredients.count > lineCapacity * 2)
+      
+      Text("\(ingredients.count)")
+      VStack(alignment: .leading) {
+        ingredientsLine(ingredients: ingredients, params: IngredientLineParams(initialIndex: 0, upperBound: numberOfItemsFirstLine))
+        if numberOfLines > 1 {
+          let numberOfItemsSecondLine = min(ingredients.count - lineCapacity, lineCapacity) - (hasMore ? 1 : 0)
+          ingredientsLine(ingredients: ingredients, params: IngredientLineParams(initialIndex: numberOfItemsFirstLine, upperBound: numberOfItemsFirstLine + numberOfItemsSecondLine))
+        }
+        if hasMore {
           components(for: ingredientGroup)
-          ForEach(selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }, id: \.self) {
-            let currentIngredient = $0
-            IngredientTileView(ingredient: $0)
-              .onTapGesture {
-                select(ingredient: currentIngredient)
-              }
-          }
         }
       }
     }
@@ -32,11 +37,39 @@ struct IngredientGroupView: View {
 }
 
 struct IngredientGroupView_Previews: PreviewProvider {
-    static var previews: some View {
-      let group = IngredientGroup.common
-        IngredientGroupView(ingredientGroup: group)
-          .environment(\.injected, DependencyContainer.defaultValue)
+  static var previews: some View {
+    let group = IngredientGroup.common
+    IngredientGroupView(ingredientGroup: group)
+      .environment(\.injected, DependencyContainer.defaultValue)
+  }
+}
+
+private extension IngredientGroupView {
+  struct IngredientLineParams {
+    let initialIndex: Int
+    let upperBound: Int
+  }
+  
+  func ingredientsLine(ingredients: [Ingredient], params: IngredientLineParams) -> some View {
+    HStack {
+      ForEach(ingredients[params.initialIndex..<params.upperBound], id: \.self) { currentIngredient in
+        IngredientTileView(ingredient: currentIngredient)
+          .onTapGesture {
+            select(ingredient: currentIngredient)
+          }
+      }
     }
+  }
+}
+
+private extension IngredientGroupView {
+  private func countNumberOfLines(ingredientsCount: Int, lineCapacity: Int) -> Int {
+    if ingredientsCount <= lineCapacity {
+      return 1
+    }
+    let linesCount = Int(ceil(CGFloat(ingredientsCount)/CGFloat(lineCapacity)))
+    return min(2, max(1, linesCount))
+  }
 }
 
 private extension IngredientGroupView {
@@ -47,7 +80,7 @@ private extension IngredientGroupView {
 
 private extension IngredientGroupView {
   var update: AnyPublisher<IngredientSelectionObservedModel, Never> {
-      injected.appState.updates(for: \.ingredientSelection)
+    injected.appState.updates(for: \.ingredientSelection)
   }
 }
 

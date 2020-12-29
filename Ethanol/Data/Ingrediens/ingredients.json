@@ -117,7 +117,7 @@
   },
   {
     "name": "baileys",
-    "groups": ["syrups"]
+    "groups": ["syrups", "alcohols"]
   },
   {
     "name": "blue curacao",

@@ -17,14 +17,13 @@ struct ContentView: View {
   var body: some View {
     GeometryReader { geometry in
       ZStack {
-        Color.gray
+        Color.clear
         VStack {
           ScrollView {
             IngredientsSelectionView()
               .environment(\.injected, injected)
           }
           .frame(height: geometry.size.height - tagsSectionHeight)
-          .background(Color.blue)
           HStack {
             CollapsedSelectedIngredientsView()
               .environment(\.injected, injected)

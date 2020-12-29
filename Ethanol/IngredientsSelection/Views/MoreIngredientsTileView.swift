@@ -22,7 +22,6 @@ struct MoreIngredientsTileView: View {
                 Image(ingredient.imageName)
                   .resizable()
                   .aspectRatio(1, contentMode: .fit)
-                  .background(Color.red)
                   .frame(width: tileSize.smallEdge, height: tileSize.smallEdge)
                   .cornerRadius(tileSize.smallCornerRadius)
               } else {
@@ -35,7 +34,7 @@ struct MoreIngredientsTileView: View {
     }
     .padding(tileSize.spacing)
     .frame(width: tileSize.edge, height: tileSize.edge)
-    .background(Color.green)
+    .background(RadialGradient(gradient: Gradient(colors: [.clear, .black]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: /*@START_MENU_TOKEN@*/5/*@END_MENU_TOKEN@*/, endRadius: 150))
     .cornerRadius(tileSize.cornerRadius)
     .onTapGesture {
       injected.interactors.activeSheet.present(.moreIngredients(group: ingredientGroup))

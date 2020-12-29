@@ -17,9 +17,9 @@ struct IngredientGroupView: View {
     VStack(alignment: .leading) {
       HStack {
         Text(ingredientGroup.name)
+          .foregroundColor(.white)
         Spacer()
-      }
-      
+      }      
       VStack(alignment: .leading) {
         let ingredients = selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }
         let screenWidth = orientation.isPortrait ? screenSize.width : screenSize.height

@@ -21,13 +21,16 @@ struct IngredientGroupView: View {
       
       Text("\(ingredients.count)")
       VStack(alignment: .leading) {
-        ingredientsLine(ingredients: ingredients, params: IngredientLineParams(initialIndex: 0, upperBound: numberOfItemsFirstLine))
+        ingredientsLine(ingredients: ingredients,
+                        params: IngredientLineParams(initialIndex: 0, upperBound: numberOfItemsFirstLine),
+                        hasMore: false,
+                        ingredientGroup: ingredientGroup)
         if numberOfLines > 1 {
           let numberOfItemsSecondLine = min(ingredients.count - lineCapacity, lineCapacity) - (hasMore ? 1 : 0)
-          ingredientsLine(ingredients: ingredients, params: IngredientLineParams(initialIndex: numberOfItemsFirstLine, upperBound: numberOfItemsFirstLine + numberOfItemsSecondLine))
-        }
-        if hasMore {
-          components(for: ingredientGroup)
+          ingredientsLine(ingredients: ingredients,
+                          params: IngredientLineParams(initialIndex: numberOfItemsFirstLine, upperBound: numberOfItemsFirstLine + numberOfItemsSecondLine),
+                          hasMore: hasMore,
+                          ingredientGroup: ingredientGroup)
         }
       }
     }
@@ -50,13 +53,16 @@ private extension IngredientGroupView {
     let upperBound: Int
   }
   
-  func ingredientsLine(ingredients: [Ingredient], params: IngredientLineParams) -> some View {
+  func ingredientsLine(ingredients: [Ingredient], params: IngredientLineParams, hasMore: Bool, ingredientGroup: IngredientGroup) -> some View {
     HStack {
       ForEach(ingredients[params.initialIndex..<params.upperBound], id: \.self) { currentIngredient in
         IngredientTileView(ingredient: currentIngredient)
           .onTapGesture {
             select(ingredient: currentIngredient)
           }
+      }
+      if hasMore {
+        components(for: ingredientGroup)
       }
     }
   }

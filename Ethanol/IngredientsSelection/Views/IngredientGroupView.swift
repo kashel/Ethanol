@@ -4,6 +4,12 @@ import SwiftUI
 struct IngredientGroupView: View {
   @Environment(\.injected) private var injected: DependencyContainer
   @State private var selection: IngredientSelectionObservedModel = .init()
+  @State var orientation = UIDevice.current.orientation
+  private let screenSize: CGSize = UIScreen.main.bounds.size
+
+  let orientationChanged = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
+      .makeConnectable()
+      .autoconnect()
   
   let ingredientGroup: IngredientGroup
   
@@ -13,14 +19,15 @@ struct IngredientGroupView: View {
         Text(ingredientGroup.name)
         Spacer()
       }
-      let ingredients = selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }
-      let lineCapacity = 4
-      let numberOfLines = countNumberOfLines(ingredientsCount: ingredients.count, lineCapacity: lineCapacity)
-      let numberOfItemsFirstLine = (numberOfLines > 1) ? lineCapacity : ingredients.count
-      let hasMore = (ingredients.count > lineCapacity * 2)
       
-      Text("\(ingredients.count)")
       VStack(alignment: .leading) {
+        let ingredients = selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }
+        let screenWidth = orientation.isPortrait ? screenSize.width : screenSize.height
+        let lineCapacity = Int(floor(screenWidth / CGFloat(90)))
+        let numberOfLines = countNumberOfLines(ingredientsCount: ingredients.count, lineCapacity: lineCapacity)
+        let numberOfItemsFirstLine = (numberOfLines > 1) ? lineCapacity : ingredients.count
+        let hasMore = (ingredients.count > lineCapacity * 2)
+        
         ingredientsLine(ingredients: ingredients,
                         params: IngredientLineParams(initialIndex: 0, upperBound: numberOfItemsFirstLine),
                         hasMore: false,
@@ -36,6 +43,9 @@ struct IngredientGroupView: View {
     }
     .padding()
     .onReceive(update, perform: { selection = $0 })
+    .onReceive(orientationChanged) { _ in
+                self.orientation = UIDevice.current.orientation
+    }
   }
 }
 
@@ -70,6 +80,9 @@ private extension IngredientGroupView {
 
 private extension IngredientGroupView {
   private func countNumberOfLines(ingredientsCount: Int, lineCapacity: Int) -> Int {
+    guard lineCapacity > 0 else {
+      return 0
+    }
     if ingredientsCount <= lineCapacity {
       return 1
     }

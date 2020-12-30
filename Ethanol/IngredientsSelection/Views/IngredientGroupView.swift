@@ -20,17 +20,14 @@ struct IngredientGroupView: View {
         let ingredients = selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }
         //support portrait mode only currenty
         let screenWidth = screenSize.width
-        let lineCapacity = Int(floor(screenWidth / CGFloat(90)))
-        let numberOfLines = countNumberOfLines(ingredientsCount: ingredients.count, lineCapacity: lineCapacity)
-        let numberOfItemsFirstLine = (numberOfLines > 1) ? lineCapacity : ingredients.count
-        let hasMore = (ingredients.count > lineCapacity * 2)
+        let rowsParams = calculateRowsParams(availableWidth: screenWidth, ingredientsCount: ingredients.count)
         
-        IngredientGroupRowView(ingredientGroup: ingredientGroup, ingredients: ingredients[0..<numberOfItemsFirstLine], hasMore: false)
-        if numberOfLines > 1 {
-          let numberOfItemsSecondLine = min(ingredients.count - lineCapacity, lineCapacity) - (hasMore ? 1 : 0)
+        IngredientGroupRowView(ingredientGroup: ingredientGroup, ingredients: ingredients[0..<rowsParams.numberOfItemsFirstRow], hasMore: false)
+        if rowsParams.numberOfRows > 1 {
+          let numberOfItemsSecondRow = min(ingredients.count - rowsParams.rowCapacity, rowsParams.rowCapacity) - (rowsParams.hasMore ? 1 : 0)
           IngredientGroupRowView(ingredientGroup: ingredientGroup,
-                                 ingredients: ingredients[numberOfItemsFirstLine..<(numberOfItemsFirstLine + numberOfItemsSecondLine)],
-                                 hasMore: hasMore)
+                                 ingredients: ingredients[rowsParams.numberOfItemsFirstRow..<(rowsParams.numberOfItemsFirstRow + numberOfItemsSecondRow)],
+                                 hasMore: rowsParams.hasMore)
         }
       }
     }
@@ -49,15 +46,32 @@ struct IngredientGroupView_Previews: PreviewProvider {
 }
 
 private extension IngredientGroupView {
-  private func countNumberOfLines(ingredientsCount: Int, lineCapacity: Int) -> Int {
-    guard lineCapacity > 0 else {
+  struct RowsParams {
+    let rowCapacity: Int
+    let numberOfRows: Int
+    let numberOfItemsFirstRow: Int
+    let hasMore: Bool
+  }
+  
+  func calculateRowsParams(availableWidth: CGFloat, ingredientsCount: Int) -> RowsParams {
+    let rowCapacity = Int(floor(availableWidth / CGFloat(90)))
+    let numberOfRows = countNumberOfRows(ingredientsCount: ingredientsCount, rowCapacity: rowCapacity)
+    
+    return RowsParams(rowCapacity: rowCapacity,
+                      numberOfRows: numberOfRows,
+                      numberOfItemsFirstRow: (numberOfRows > 1) ? rowCapacity : ingredientsCount,
+                      hasMore: (ingredientsCount > rowCapacity * 2))
+  }
+  
+  func countNumberOfRows(ingredientsCount: Int, rowCapacity: Int) -> Int {
+    guard rowCapacity > 0 else {
       return 0
     }
-    if ingredientsCount <= lineCapacity {
+    if ingredientsCount <= rowCapacity {
       return 1
     }
-    let linesCount = Int(ceil(CGFloat(ingredientsCount)/CGFloat(lineCapacity)))
-    return min(2, max(1, linesCount))
+    let rowsCount = Int(ceil(CGFloat(ingredientsCount)/CGFloat(rowCapacity)))
+    return min(2, max(1, rowsCount))
   }
 }
 

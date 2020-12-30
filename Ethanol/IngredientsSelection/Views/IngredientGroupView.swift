@@ -30,16 +30,12 @@ struct IngredientGroupView: View {
         let numberOfItemsFirstLine = (numberOfLines > 1) ? lineCapacity : ingredients.count
         let hasMore = (ingredients.count > lineCapacity * 2)
         
-        ingredientsLine(ingredients: ingredients,
-                        params: IngredientLineParams(initialIndex: 0, upperBound: numberOfItemsFirstLine),
-                        hasMore: false,
-                        ingredientGroup: ingredientGroup)
+        IngredientGroupRowView(ingredientGroup: ingredientGroup, ingredients: ingredients[0..<numberOfItemsFirstLine], hasMore: false)
         if numberOfLines > 1 {
           let numberOfItemsSecondLine = min(ingredients.count - lineCapacity, lineCapacity) - (hasMore ? 1 : 0)
-          ingredientsLine(ingredients: ingredients,
-                          params: IngredientLineParams(initialIndex: numberOfItemsFirstLine, upperBound: numberOfItemsFirstLine + numberOfItemsSecondLine),
-                          hasMore: hasMore,
-                          ingredientGroup: ingredientGroup)
+          IngredientGroupRowView(ingredientGroup: ingredientGroup,
+                                 ingredients: ingredients[numberOfItemsFirstLine..<(numberOfItemsFirstLine + numberOfItemsSecondLine)],
+                                 hasMore: hasMore)
         }
       }
     }
@@ -57,27 +53,6 @@ struct IngredientGroupView_Previews: PreviewProvider {
     let group = IngredientGroup.common
     IngredientGroupView(ingredientGroup: group, backgroundColor: Color.blue)
       .environment(\.injected, DependencyContainer.defaultValue)
-  }
-}
-
-private extension IngredientGroupView {
-  struct IngredientLineParams {
-    let initialIndex: Int
-    let upperBound: Int
-  }
-  
-  func ingredientsLine(ingredients: [Ingredient], params: IngredientLineParams, hasMore: Bool, ingredientGroup: IngredientGroup) -> some View {
-    HStack {
-      ForEach(ingredients[params.initialIndex..<params.upperBound], id: \.self) { currentIngredient in
-        IngredientTileView(ingredient: currentIngredient)
-          .onTapGesture {
-            select(ingredient: currentIngredient)
-          }
-      }
-      if hasMore {
-        components(for: ingredientGroup)
-      }
-    }
   }
 }
 

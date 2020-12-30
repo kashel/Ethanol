@@ -4,12 +4,7 @@ import SwiftUI
 struct IngredientGroupView: View {
   @Environment(\.injected) private var injected: DependencyContainer
   @State private var selection: IngredientSelectionObservedModel = .init()
-  @State var orientation = UIDevice.current.orientation
   private let screenSize: CGSize = UIScreen.main.bounds.size
-
-  let orientationChanged = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
-      .makeConnectable()
-      .autoconnect()
   
   let ingredientGroup: IngredientGroup
   let backgroundColor: Color
@@ -42,9 +37,6 @@ struct IngredientGroupView: View {
     .padding()
     .background(RadialGradient(gradient: Gradient(colors: [.white, backgroundColor]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: 10, endRadius: 200))
     .onReceive(update, perform: { selection = $0 })
-    .onReceive(orientationChanged) { _ in
-                self.orientation = UIDevice.current.orientation
-    }
   }
 }
 

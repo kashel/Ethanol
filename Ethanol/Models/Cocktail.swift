@@ -1,6 +1,6 @@
 import Foundation
 
-struct Cocktail {
+public struct Cocktail {
   let name: String
   let description: String
   let ingredients: [Cocktail.Ingredient]

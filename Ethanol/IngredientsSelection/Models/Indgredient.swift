@@ -5,4 +5,5 @@ struct Ingredient: Equatable, Hashable {
   let imageName: String
   let groups: Set<IngredientGroup>
   var isSelected: Bool = false
+  let importance: Int = 1
 }

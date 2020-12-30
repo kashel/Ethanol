@@ -31,8 +31,7 @@ struct IngredientsSelectionView_Previews: PreviewProvider {
 
 private extension IngredientsSelectionView {
   func components(for group: IngredientGroup) -> some View {
-    IngredientGroupView(ingredientGroup: group)
-      .background(RadialGradient(gradient: Gradient(colors: [.white, group.color]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: 10, endRadius: 200))
+    IngredientGroupView(ingredientGroup: group, backgroundColor: group.color)
       .environment(\.injected, injected)
   }
 }

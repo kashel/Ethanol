@@ -12,6 +12,7 @@ struct IngredientGroupView: View {
       .autoconnect()
   
   let ingredientGroup: IngredientGroup
+  let backgroundColor: Color
   
   var body: some View {
     VStack(alignment: .leading) {
@@ -43,6 +44,7 @@ struct IngredientGroupView: View {
       }
     }
     .padding()
+    .background(RadialGradient(gradient: Gradient(colors: [.white, backgroundColor]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: 10, endRadius: 200))
     .onReceive(update, perform: { selection = $0 })
     .onReceive(orientationChanged) { _ in
                 self.orientation = UIDevice.current.orientation
@@ -53,9 +55,8 @@ struct IngredientGroupView: View {
 struct IngredientGroupView_Previews: PreviewProvider {
   static var previews: some View {
     let group = IngredientGroup.common
-    IngredientGroupView(ingredientGroup: group)
+    IngredientGroupView(ingredientGroup: group, backgroundColor: Color.blue)
       .environment(\.injected, DependencyContainer.defaultValue)
-      .background(Color.blue)
   }
 }
 

@@ -36,6 +36,7 @@ struct ContentView: View {
           .padding()
           .frame(width: geometry.size.width, height: tagsSectionHeight)
         }
+        .frame(width: geometry.size.width)
       }
       .edgesIgnoringSafeArea([.leading, .trailing, .bottom])
     }

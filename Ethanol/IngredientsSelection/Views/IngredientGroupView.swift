@@ -22,7 +22,8 @@ struct IngredientGroupView: View {
       }      
       VStack(alignment: .leading) {
         let ingredients = selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }
-        let screenWidth = orientation.isPortrait ? screenSize.width : screenSize.height
+        //support portrait mode only currenty
+        let screenWidth = screenSize.width
         let lineCapacity = Int(floor(screenWidth / CGFloat(90)))
         let numberOfLines = countNumberOfLines(ingredientsCount: ingredients.count, lineCapacity: lineCapacity)
         let numberOfItemsFirstLine = (numberOfLines > 1) ? lineCapacity : ingredients.count
@@ -54,6 +55,7 @@ struct IngredientGroupView_Previews: PreviewProvider {
     let group = IngredientGroup.common
     IngredientGroupView(ingredientGroup: group)
       .environment(\.injected, DependencyContainer.defaultValue)
+      .background(Color.blue)
   }
 }
 

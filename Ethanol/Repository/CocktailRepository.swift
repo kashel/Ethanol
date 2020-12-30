@@ -1,5 +1,5 @@
 import Foundation
 
-protocol CoctailRepository {
+protocol CocktailRepository {
   func getAllCocktails(completion: ())
 }

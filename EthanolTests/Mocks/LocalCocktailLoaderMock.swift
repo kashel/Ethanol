@@ -1,18 +1,7 @@
 import Foundation
 @testable import Ethanol
 
-//struct CocktailAPIMock: CocktailAPI {
-//  var mockCocktails = [
-//    CoctailMock.whiteRussian,
-//    CoctailMock.mojito
-//  ]
-//
-//  func getCocktail(with ingredients: [String]) -> AnyPublisher<[Cocktail], Error> {
-//    return [mockCocktails].publisher.setFailureType(to: Error.self).eraseToAnyPublisher()
-//  }
-//}
-
-enum CoctailMock {
+enum CocktailMock {
   static var whiteRussian: Cocktail = {
     return Cocktail(name: "White Russian", description: "The White Russian is a three-ingredient cocktail based on the erstwhile Black Russian, which turns white on the addition of cream.", ingredients: IngredientsMock.whiteRussian)
   }()
@@ -57,12 +46,12 @@ enum IngredientsMock {
   ]
 }
 
-class LocalCoctailLoaderMock: LocalCoctailLoader {
-  var availableCoctails: [Cocktail] = []
+class LocalCocktailLoaderMock: LocalCocktailLoader {
+  var availableCocktails: [Cocktail] = []
   
   var loadCalled = false
   func load() -> [Cocktail] {
     loadCalled = true
-    return availableCoctails
+    return availableCocktails
   }
 }

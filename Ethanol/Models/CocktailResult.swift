@@ -1,6 +1,6 @@
 import Foundation
 
 public struct CocktailResult {
-  let coctail: Cocktail
+  let cocktail: Cocktail
   let missingIngredients: [Ingredient]
 }

@@ -6,28 +6,35 @@ import Combine
 struct ExpandedSelectedIngredientsView: View {
   @Environment(\.injected) private var injected: DependencyContainer
   @State private var selection: IngredientSelectionObservedModel = .init()
-
   @State private var editMode = EditMode.active
+  @State var hasAnyIngredientsSelecetd: Bool = false
   
-    var body: some View {
-      NavigationView {
-        List {
-          ForEach(ingredients, id: \.self) {
-            cell(with: $0)
-          }
-          .onDelete(perform: { indexSet in
-            guard let offset = indexSet.first else {
-              return
-            }
-            injected.interactors.ingredientsSelection.deselect(ingredient: ingredients[offset])
-          })
+  var body: some View {
+    NavigationView {
+      List {
+        ForEach(ingredients, id: \.self) {
+          cell(with: $0)
         }
-        .navigationBarTitle("Selected ingredients")
-        .navigationBarTitleDisplayMode(.large)
-        .environment(\.editMode, $editMode)
+        .onDelete(perform: { indexSet in
+          guard let offset = indexSet.first else {
+            return
+          }
+          injected.interactors.ingredientsSelection.deselect(ingredient: ingredients[offset])
+        })
       }
-      .onReceive(update, perform: { selection = $0 })
+      .navigationBarTitle("Selected ingredients")
+      .navigationBarItems(trailing:
+                            Button("Clear all") {
+                              injected.interactors.ingredientsSelection.deselectAll()
+                            }.disabled(!hasAnyIngredientsSelecetd))
+      .navigationBarTitleDisplayMode(.large)
+      .environment(\.editMode, $editMode)
     }
+    .onReceive(update, perform: {
+      selection = $0
+      hasAnyIngredientsSelecetd = selection.ingredients.filter{ $0.isSelected }.isEmpty == false
+    })
+  }
 }
 
 private extension ExpandedSelectedIngredientsView {
@@ -43,15 +50,15 @@ private extension ExpandedSelectedIngredientsView {
 }
 
 struct ExpandedSelectedIngredientsView_Previews: PreviewProvider {
-    static var previews: some View {
-      ExpandedSelectedIngredientsView()
-        .environment(\.injected, DependencyContainer.defaultValue)
-    }
+  static var previews: some View {
+    ExpandedSelectedIngredientsView()
+      .environment(\.injected, DependencyContainer.defaultValue)
+  }
 }
 
 private extension ExpandedSelectedIngredientsView {
   var update: AnyPublisher<IngredientSelectionObservedModel, Never> {
-      injected.appState.updates(for: \.ingredientSelection)
+    injected.appState.updates(for: \.ingredientSelection)
   }
 }
 

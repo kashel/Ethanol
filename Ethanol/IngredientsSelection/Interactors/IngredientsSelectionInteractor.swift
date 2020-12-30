@@ -2,6 +2,7 @@
 protocol IngredientsSelectionInteractor {
   func select(ingredient: Ingredient)
   func deselect(ingredient: Ingredient)
+  func deselectAll()
 }
 
 struct BaseIngredientsSelectionInteractor: IngredientsSelectionInteractor {
@@ -17,6 +18,13 @@ struct BaseIngredientsSelectionInteractor: IngredientsSelectionInteractor {
 
   func deselect(ingredient: Ingredient) {
     change(ingredient: ingredient, isSelected: false)
+  }
+  
+  func deselectAll() {
+    let ingredients = appState[\.ingredientSelection.ingredients]
+    ingredients.forEach {
+      change(ingredient: $0, isSelected: false)
+    }
   }
   
   private func change(ingredient: Ingredient, isSelected: Bool) {

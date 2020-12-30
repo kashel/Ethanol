@@ -9,9 +9,10 @@ struct IngredientsSelectionView: View {
   var body: some View {
     VStack {
       ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false, content: {
-        ForEach(IngredientGroup.allCases, id: \.self) {
-          components(for: $0)
-            .padding(.bottom, -10)
+        VStack(spacing: 0) {
+          ForEach(IngredientGroup.allCases, id: \.self) {
+            components(for: $0)
+          }
         }
       })
     }

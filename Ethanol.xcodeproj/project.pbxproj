@@ -33,6 +33,8 @@
 		97F9B26E2598EBC000632554 /* IngredientDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9B26D2598EBC000632554 /* IngredientDTO.swift */; };
 		97F9B27B2598EC5500632554 /* IngredientDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9B27A2598EC5500632554 /* IngredientDTOMapper.swift */; };
 		97F9B2802598F86B00632554 /* Drinks in Resources */ = {isa = PBXBuildFile; fileRef = 97F9B27F2598F86B00632554 /* Drinks */; };
+		97F9B28C259CA00900632554 /* View+Hidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9B28B259CA00900632554 /* View+Hidden.swift */; };
+		97F9B291259CA2B300632554 /* View+Presented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9B290259CA2B300632554 /* View+Presented.swift */; };
 		DC0F3B3C255732BF009E449B /* QStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F3B3B255732BF009E449B /* QStack.swift */; };
 		DC5C44572560489500C2AB17 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C44562560489500C2AB17 /* Store.swift */; };
 		DC5C445E256048FE00C2AB17 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C445D256048FE00C2AB17 /* AppState.swift */; };
@@ -92,6 +94,8 @@
 		97F9B26D2598EBC000632554 /* IngredientDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDTO.swift; sourceTree = "<group>"; };
 		97F9B27A2598EC5500632554 /* IngredientDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDTOMapper.swift; sourceTree = "<group>"; };
 		97F9B27F2598F86B00632554 /* Drinks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Drinks; sourceTree = "<group>"; };
+		97F9B28B259CA00900632554 /* View+Hidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Hidden.swift"; sourceTree = "<group>"; };
+		97F9B290259CA2B300632554 /* View+Presented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Presented.swift"; sourceTree = "<group>"; };
 		DC0F3B3B255732BF009E449B /* QStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QStack.swift; sourceTree = "<group>"; };
 		DC5C44562560489500C2AB17 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		DC5C445D256048FE00C2AB17 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		977E69402550910E00BAA48D /* Ethanol */ = {
 			isa = PBXGroup;
 			children = (
+				97F9B28A259C9FD100632554 /* Helpers */,
 				97F9B2602598E88700632554 /* Data */,
 				DC5C445C256048E000C2AB17 /* Injected */,
 				DC5C445B2560489C00C2AB17 /* System */,
@@ -269,6 +274,15 @@
 				97F9B2612598E8AC00632554 /* ingredients.json */,
 			);
 			path = Ingrediens;
+			sourceTree = "<group>";
+		};
+		97F9B28A259C9FD100632554 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				97F9B28B259CA00900632554 /* View+Hidden.swift */,
+				97F9B290259CA2B300632554 /* View+Presented.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		DC0F3B3A25573297009E449B /* CustomViews */ = {
@@ -448,6 +462,7 @@
 				974389B1258C1786008BC321 /* ActiveSheetInteractor.swift in Sources */,
 				977E69442550910E00BAA48D /* ContentView.swift in Sources */,
 				97B00AD72557290D00D7C2F4 /* ExpandedSelectedIngredientsView.swift in Sources */,
+				97F9B28C259CA00900632554 /* View+Hidden.swift in Sources */,
 				97B00AB7255722A000D7C2F4 /* IngredientGroup.swift in Sources */,
 				97F9B27B2598EC5500632554 /* IngredientDTOMapper.swift in Sources */,
 				97B00AA725570E5B00D7C2F4 /* CocktailRepository.swift in Sources */,
@@ -464,6 +479,7 @@
 				DC5C4471256049F000C2AB17 /* DependencyContainer.swift in Sources */,
 				97B00AD22557290000D7C2F4 /* IngredientTileView.swift in Sources */,
 				97B00AB0255720BF00D7C2F4 /* IngredientsSelectionView.swift in Sources */,
+				97F9B291259CA2B300632554 /* View+Presented.swift in Sources */,
 				97B00A9825570C3600D7C2F4 /* Cocktail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

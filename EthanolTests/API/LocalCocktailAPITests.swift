@@ -42,7 +42,7 @@ class LocalCocktailAPITests: XCTestCase {
     })
     cocktails = Array(cocktails.dropFirst())
     XCTAssertEqual(cocktails.first?.cocktail.name, "AB")
-    XCTAssertEqual(cocktails.first?.missingIngredients.map{ $0.name }, ["C"])
+    XCTAssertEqual(cocktails.first?.missingIngredients, ["C"])
   }
   
   func test_cocktailWithMissingIngredientsWithAcceptedRange_isPresentInResponse() {

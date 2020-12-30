@@ -4,11 +4,11 @@ import Foundation
 import Combine
 
 public protocol CocktailAPI {
-  func getCocktails(with ingredients: [String]) -> AnyPublisher<[CocktailResult], Error>
+  func getCocktails(with ingredients: Set<String>) -> AnyPublisher<[CocktailResult], Error>
 }
 
 public protocol LocalCocktailLoader {
-  func load() -> [Cocktail]
+  func load() -> Set<Cocktail>
 }
 
 public struct LocalCocktailAPI: CocktailAPI {
@@ -19,7 +19,18 @@ public struct LocalCocktailAPI: CocktailAPI {
     self.loader = loader
   }
   
-  public func getCocktails(with ingredients: [String]) -> AnyPublisher<[CocktailResult], Error> {
-    return [loader.load().map({CocktailResult(cocktail: $0, missingIngredients:[])})].publisher.setFailureType(to: Error.self).eraseToAnyPublisher()
+  public func getCocktails(with searchIngredients: Set<String>) -> AnyPublisher<[CocktailResult], Error> {
+    let matchingCocktails = loader.load().map { cocktail -> CocktailResult in
+      let cocktailIngredients = Set(cocktail.ingredients.map({ $0.name }))
+      let missingIngredients = searchIngredients.subtracting(cocktailIngredients)
+      return CocktailResult(cocktail: cocktail, missingIngredients: missingIngredients)
+    }.filter { (result) -> Bool in
+      //TODO: count importance
+      result.missingIngredients.count <= maxMissingImportance
+    }.sorted { (lhs, rhs) -> Bool in
+      lhs.missingIngredients.count < rhs.missingIngredients.count
+    }
+    
+    return [matchingCocktails].publisher.setFailureType(to: Error.self).eraseToAnyPublisher()
   }
 }

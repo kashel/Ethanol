@@ -30,14 +30,14 @@ enum CocktailMock {
 }
 
 enum IngredientsMock {
-  static var whiteRussian: [Cocktail.Ingredient] = [
+  static var whiteRussian: Set<Cocktail.Ingredient> = [
     .init(id: "ice", unit: .piece, amount: 5),
     .init(id: "coffee liqueur", unit: .ml, amount: 50),
     .init(id: "vodka", unit: .ml, amount: 50),
     .init(id: "fresh cream", unit: .ml, amount: 50)
   ]
   
-  static var mojito: [Cocktail.Ingredient] = [
+  static var mojito: Set<Cocktail.Ingredient> = [
     .init(id: "ice", unit: .piece, amount: 5),
     .init(id: "light rum", unit: .ml, amount: 60),
     .init(id: "lime wedges", unit: .piece, amount: 4),
@@ -47,10 +47,10 @@ enum IngredientsMock {
 }
 
 class LocalCocktailLoaderMock: LocalCocktailLoader {
-  var availableCocktails: [Cocktail] = []
+  var availableCocktails: Set<Cocktail> = []
   
   var loadCalled = false
-  func load() -> [Cocktail] {
+  func load() -> Set<Cocktail> {
     loadCalled = true
     return availableCocktails
   }

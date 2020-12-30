@@ -4,6 +4,7 @@ import Combine
 struct MoreIngredientsTileView: View {
   @Environment(\.injected) private var injected: DependencyContainer
   let ingredientGroup: IngredientGroup
+  let ingredients: [Ingredient]
   @State private var selection: IngredientSelectionObservedModel = .init()
   
   @State private var tileSize = TileSize()
@@ -46,18 +47,12 @@ struct MoreIngredientsTileView: View {
 struct MoreIngredientsTile_Previews: PreviewProvider {
   static var previews: some View {
     let group = IngredientGroup.common
-    MoreIngredientsTileView(ingredientGroup: group)
+    MoreIngredientsTileView(ingredientGroup: group, ingredients: DependencyContainer.defaultValue.appState[\.ingredientSelection.ingredients])
       .environment(\.injected, DependencyContainer.defaultValue)
   }
 }
 
-private extension MoreIngredientsTileView {
-  var ingredients: [Ingredient] {
-    selection.ingredients.filter {
-      !$0.isSelected && $0.groups.contains(ingredientGroup)
-    }
-  }
-  
+private extension MoreIngredientsTileView {  
   var numberOfRows: Int { ingredients.count > 2 ? 2 : 1 }
 }
 

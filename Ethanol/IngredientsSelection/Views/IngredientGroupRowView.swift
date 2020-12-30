@@ -4,7 +4,11 @@ struct IngredientGroupRowView: View {
   @Environment(\.injected) private var injected: DependencyContainer
   let ingredientGroup: IngredientGroup
   let ingredients: ArraySlice<Ingredient>
-  let hasMore: Bool
+  let hasMore: HasMore
+  enum HasMore {
+    case no
+    case yes(ArraySlice<Ingredient>)
+  }
   
   struct IngredientGroupRowViewParams {
     let initialIndex: Int
@@ -19,8 +23,8 @@ struct IngredientGroupRowView: View {
             select(ingredient: currentIngredient)
           }
       }
-      if hasMore {
-        components(for: ingredientGroup)
+      if case HasMore.yes(let moreIngredients) = hasMore {
+        components(for: ingredientGroup, ingredients: moreIngredients)
       }
     }
   }
@@ -34,8 +38,8 @@ private extension IngredientGroupRowView {
 }
 
 private extension IngredientGroupRowView {
-  func components(for group: IngredientGroup) -> some View {
-    MoreIngredientsTileView(ingredientGroup: ingredientGroup)
+  func components(for group: IngredientGroup, ingredients: ArraySlice<Ingredient>) -> some View {
+    MoreIngredientsTileView(ingredientGroup: ingredientGroup, ingredients: Array(ingredients))
       .environment(\.injected, injected)
   }
 }

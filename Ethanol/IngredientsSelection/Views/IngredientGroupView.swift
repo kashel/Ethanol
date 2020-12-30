@@ -22,12 +22,13 @@ struct IngredientGroupView: View {
         let screenWidth = screenSize.width
         let rowsParams = calculateRowsParams(availableWidth: screenWidth, ingredientsCount: ingredients.count)
         
-        IngredientGroupRowView(ingredientGroup: ingredientGroup, ingredients: ingredients[0..<rowsParams.numberOfItemsFirstRow], hasMore: false)
+        IngredientGroupRowView(ingredientGroup: ingredientGroup, ingredients: ingredients[0..<rowsParams.numberOfItemsFirstRow], hasMore: .no)
         if rowsParams.numberOfRows > 1 {
           let numberOfItemsSecondRow = min(ingredients.count - rowsParams.rowCapacity, rowsParams.rowCapacity) - (rowsParams.hasMore ? 1 : 0)
+          let upperBound = rowsParams.numberOfItemsFirstRow + numberOfItemsSecondRow
           IngredientGroupRowView(ingredientGroup: ingredientGroup,
-                                 ingredients: ingredients[rowsParams.numberOfItemsFirstRow..<(rowsParams.numberOfItemsFirstRow + numberOfItemsSecondRow)],
-                                 hasMore: rowsParams.hasMore)
+                                 ingredients: ingredients[rowsParams.numberOfItemsFirstRow..<upperBound],
+                                 hasMore: rowsParams.hasMore ? .yes(ingredients[upperBound...]) : .no)
         }
       }
     }
@@ -76,20 +77,7 @@ private extension IngredientGroupView {
 }
 
 private extension IngredientGroupView {
-  func select(ingredient: Ingredient) {
-    injected.interactors.ingredientsSelection.select(ingredient: ingredient)
-  }
-}
-
-private extension IngredientGroupView {
   var update: AnyPublisher<IngredientSelectionObservedModel, Never> {
     injected.appState.updates(for: \.ingredientSelection)
-  }
-}
-
-private extension IngredientGroupView {
-  func components(for group: IngredientGroup) -> some View {
-    MoreIngredientsTileView(ingredientGroup: ingredientGroup)
-      .environment(\.injected, injected)
   }
 }

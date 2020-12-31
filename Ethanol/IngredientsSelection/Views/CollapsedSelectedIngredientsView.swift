@@ -15,8 +15,9 @@ struct CollapsedSelectedIngredientsView: View {
         Button(action: {
           
         }) {
-          Text("Found cocktails: \(filteredCocktails.count)")
+          Text("\(filteredCocktails.count) 🍹")
         }
+        .disabled(filteredCocktails.count == 0)
         HStack {
           ScrollView(.horizontal) {
             HStack {

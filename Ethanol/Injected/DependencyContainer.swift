@@ -10,8 +10,6 @@ extension DependencyContainer: EnvironmentKey {
     let state = AppState()
     let appState = Store<AppState>(state)
     let interactors = Interactors(appState: appState)
-    interactors.ingredientsSelection.select(ingredient: state.ingredientSelection.ingredients[0])
-    interactors.ingredientsSelection.select(ingredient: state.ingredientSelection.ingredients[1])
     return DependencyContainer(appState: appState, interactors: interactors)
   }
 }

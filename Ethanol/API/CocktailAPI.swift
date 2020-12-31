@@ -26,7 +26,7 @@ public struct LocalCocktailAPI: CocktailAPI {
       return CocktailResult(cocktail: cocktail, missingIngredients: missingIngredients)
     }.filter { (result) -> Bool in
       //TODO: count importance
-      result.missingIngredients.count <= maxMissingImportance
+      result.missingIngredients.count <= searchIngredients.count - maxMissingImportance
     }.sorted { (lhs, rhs) -> Bool in
       lhs.missingIngredients.count < rhs.missingIngredients.count
     }

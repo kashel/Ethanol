@@ -41,7 +41,7 @@ enum IngredientsMock {
     .init(id: "ice", unit: .piece, amount: 5),
     .init(id: "white rum", unit: .ml, amount: 60),
     .init(id: "lime wedges", unit: .piece, amount: 4),
-    .init(id: "mint sprigs, or spear", unit: .piece, amount: 12),
+    .init(id: "mint", unit: .piece, amount: 12),
     .init(id: "fresh lime juice", unit: .ml, amount: 90)
   ]
 }

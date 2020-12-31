@@ -14,6 +14,7 @@
 		972348E4259D043600C118F5 /* CocktailResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972348E3259D043600C118F5 /* CocktailResult.swift */; };
 		97283F682563079E003527C5 /* MoreIngredientsTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97283F672563079E003527C5 /* MoreIngredientsTileView.swift */; };
 		973C279D259DCE42001936F8 /* FilteredCocktailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C279C259DCE42001936F8 /* FilteredCocktailsInteractor.swift */; };
+		973C27A1259DDE4F001936F8 /* LocalCocktailLoaderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972348DE259CF4D400C118F5 /* LocalCocktailLoaderMock.swift */; };
 		974389AC258C0881008BC321 /* IngredientsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974389AB258C0881008BC321 /* IngredientsListView.swift */; };
 		974389B1258C1786008BC321 /* ActiveSheetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974389B0258C1786008BC321 /* ActiveSheetInteractor.swift */; };
 		97768E5F258007AA00E64532 /* CollapsedSelectedIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97768E5E258007AA00E64532 /* CollapsedSelectedIngredientsView.swift */; };
@@ -515,6 +516,7 @@
 				97B00AB0255720BF00D7C2F4 /* IngredientsSelectionView.swift in Sources */,
 				97F9B291259CA2B300632554 /* View+Presented.swift in Sources */,
 				97B00A9825570C3600D7C2F4 /* Cocktail.swift in Sources */,
+				973C27A1259DDE4F001936F8 /* LocalCocktailLoaderMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

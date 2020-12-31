@@ -17,4 +17,5 @@ enum Sheet: Equatable, Identifiable {
 struct AppState {
   var ingredientSelection = IngredientSelectionObservedModel()
   var activeSheet: Sheet?
+  var filteredCocktails: [CocktailResult] = []
 }

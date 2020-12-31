@@ -7,11 +7,14 @@ enum Sheet: Equatable, Identifiable {
       return "moreIngredients"
     case .selectedIngredients:
       return "selectedIngredients"
+    case .filteredCocktails:
+      return "filteredCocktails"
     }
   }
   
   case moreIngredients(group: IngredientGroup)
   case selectedIngredients
+  case filteredCocktails
 }
 
 struct AppState {

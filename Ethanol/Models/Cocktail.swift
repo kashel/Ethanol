@@ -1,8 +1,13 @@
 import Foundation
+import SwiftUI
 
 public struct Cocktail {
   let name: String
   let description: String
+  let imageName: String
+  var image: Image {
+      Image(imageName)
+  }
   let ingredients: Set<Cocktail.Ingredient>
 }
 

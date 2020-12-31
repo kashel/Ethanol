@@ -13,7 +13,7 @@ struct CollapsedSelectedIngredientsView: View {
     var body: some View {
       VStack {
         Button(action: {
-          
+          injected.interactors.activeSheet.present(.filteredCocktails)
         }) {
           Text("\(filteredCocktails.count) 🍹")
         }

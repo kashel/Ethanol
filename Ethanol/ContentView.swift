@@ -40,6 +40,8 @@ struct ContentView: View {
         IngredientsListView(ingredientGroup: ingredientGroup)
       case .selectedIngredients:
         ExpandedSelectedIngredientsView().environment(\.injected, injected)
+      case .filteredCocktails:
+        CocktailsListView().environment(\.injected, injected)
       }
     })
   }

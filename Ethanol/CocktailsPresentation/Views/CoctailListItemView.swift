@@ -5,10 +5,14 @@ struct CocktailsListItemView: View {
   
   var body: some View {
     HStack {
-      Text(cocktailResult.cocktail.name)
-      VStack {
+      cocktailResult.cocktail.image
+        .resizable()
+        .aspectRatio(1, contentMode: .fit)
+      VStack(spacing: 20) {
         Text(cocktailResult.cocktail.name)
+          .font(.headline)
         Text(cocktailResult.cocktail.description)
+          .font(.footnote)
 //        ScrollView(.horizontal) {
 //          HStack {
 //            ForEach(cocktailResult.cocktail.ingredients, id: \.self) {

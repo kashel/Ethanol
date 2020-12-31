@@ -2,11 +2,11 @@ import SwiftUI
 import Combine
 
 struct CocktailsListView: View {
-  @Environment private var injected: DependencyContainer
-  @State private var filteredCoctails: [CocktailResult]
+  @Environment(\.injected) private var injected: DependencyContainer
+  @State private var filteredCoctails: [CocktailResult] = []
   
   var body: some View {
-    VStack {
+    List {
       ForEach(filteredCoctails, id:\.self) {
         CocktailsListItemView(cocktailResult: $0)
       }
@@ -18,5 +18,20 @@ struct CocktailsListView: View {
 private extension CocktailsListView {
   var update: AnyPublisher<[CocktailResult], Never> {
     injected.appState.updates(for: \.filteredCocktails)
+  }
+}
+
+struct CocktailsListView_Previews: PreviewProvider {
+  static var previews: some View {
+    let dependencyContainer = DependencyContainer.defaultValue
+    let in1: Ingredient = dependencyContainer.appState[\.ingredientSelection].ingredients.first{ $0.name == "ice" }!
+    let in2: Ingredient = dependencyContainer.appState[\.ingredientSelection].ingredients.first{ $0.name == "white rum" }!
+    let in3: Ingredient = dependencyContainer.appState[\.ingredientSelection].ingredients.first{ $0.name == "mint" }!
+    dependencyContainer.interactors.ingredientsSelection.select(ingredient: in1)
+    dependencyContainer.interactors.ingredientsSelection.select(ingredient: in2)
+    dependencyContainer.interactors.ingredientsSelection.select(ingredient: in3)
+    return CocktailsListView()
+      .environment(\.injected, dependencyContainer)
+    
   }
 }

@@ -10,3 +10,9 @@ extension CocktailResult: Equatable {
     return lhs.cocktail == rhs.cocktail
   }
 }
+
+extension CocktailResult: Hashable {
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(cocktail)
+  }
+}

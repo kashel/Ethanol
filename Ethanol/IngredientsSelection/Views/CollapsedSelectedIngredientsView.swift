@@ -6,25 +6,34 @@ import Combine
 struct CollapsedSelectedIngredientsView: View {
   @Environment(\.injected) private var injected: DependencyContainer
   @State private var selection: IngredientSelectionObservedModel = .init()
+  @State private var filteredCocktails: [CocktailResult] = []
 
   @State private var editMode = EditMode.active
   
     var body: some View {
-      HStack {
-        ScrollView(.horizontal) {
-          HStack {
-            ForEach(selection.ingredients.filter(\.isSelected), id: \.self) {
-              tag(with: $0.name)
+      VStack {
+        Button(action: {
+          
+        }) {
+          Text("Found cocktails: \(filteredCocktails.count)")
+        }
+        HStack {
+          ScrollView(.horizontal) {
+            HStack {
+              ForEach(selection.ingredients.filter(\.isSelected), id: \.self) {
+                tag(with: $0.name)
+              }
             }
           }
-        }
-        .onReceive(update, perform: { selection = $0 })
-        Button(action: {
-          injected.interactors.activeSheet.present(.selectedIngredients)
-        }) {
-          Image(systemName: "arrow.up.backward.and.arrow.down.forward")
+          Button(action: {
+            injected.interactors.activeSheet.present(.selectedIngredients)
+          }) {
+            Image(systemName: "arrow.up.backward.and.arrow.down.forward")
+          }
         }
       }
+      .onReceive(ingredientSelectionUpdate, perform: { selection = $0 })
+      .onReceive(filteredCocktailsUpdate, perform: { filteredCocktails = $0 })
     }
 }
 
@@ -47,8 +56,12 @@ struct CollapsedSelectedIngredientsView_Previews: PreviewProvider {
 }
 
 private extension CollapsedSelectedIngredientsView {
-  var update: AnyPublisher<IngredientSelectionObservedModel, Never> {
+  var ingredientSelectionUpdate: AnyPublisher<IngredientSelectionObservedModel, Never> {
       injected.appState.updates(for: \.ingredientSelection)
+  }
+  
+  var filteredCocktailsUpdate: AnyPublisher<[CocktailResult], Never> {
+    injected.appState.updates(for: \.filteredCocktails)
   }
 }
 

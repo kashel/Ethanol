@@ -10,14 +10,21 @@ struct CollapsedSelectedIngredientsView: View {
   @State private var editMode = EditMode.active
   
     var body: some View {
-      ScrollView(.horizontal) {
-        HStack {
-          ForEach(selection.ingredients.filter(\.isSelected), id: \.self) {
-            tag(with: $0.name)
+      HStack {
+        ScrollView(.horizontal) {
+          HStack {
+            ForEach(selection.ingredients.filter(\.isSelected), id: \.self) {
+              tag(with: $0.name)
+            }
           }
         }
+        .onReceive(update, perform: { selection = $0 })
+        Button(action: {
+          injected.interactors.activeSheet.present(.selectedIngredients)
+        }) {
+          Image(systemName: "arrow.up.backward.and.arrow.down.forward")
+        }
       }
-      .onReceive(update, perform: { selection = $0 })
     }
 }
 

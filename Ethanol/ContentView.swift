@@ -24,17 +24,10 @@ struct ContentView: View {
               .environment(\.injected, injected)
           }
           .frame(height: geometry.size.height - tagsSectionHeight)
-          HStack {
-            CollapsedSelectedIngredientsView()
-              .environment(\.injected, injected)
-            Button(action: {
-              injected.interactors.activeSheet.present(.selectedIngredients)
-            }) {
-              Image(systemName: "arrow.up.backward.and.arrow.down.forward")
-            }
-          }
-          .padding()
-          .frame(width: geometry.size.width, height: tagsSectionHeight)
+          CollapsedSelectedIngredientsView()
+            .environment(\.injected, injected)
+            .padding()
+            .frame(width: geometry.size.width, height: tagsSectionHeight)
         }
         .frame(width: geometry.size.width)
       }
@@ -43,8 +36,8 @@ struct ContentView: View {
     .onReceive(update, perform: { activeSheet = $0 })
     .sheet(item: $activeSheet, content: { sheet in
       switch sheet {
-        case .moreIngredients(let ingredientGroup):
-          IngredientsListView(ingredientGroup: ingredientGroup)
+      case .moreIngredients(let ingredientGroup):
+        IngredientsListView(ingredientGroup: ingredientGroup)
       case .selectedIngredients:
         ExpandedSelectedIngredientsView().environment(\.injected, injected)
       }

@@ -4,6 +4,7 @@ import SwiftUI
 public struct Cocktail {
   let name: String
   let description: String
+  let directions: String
   let imageName: String
   var image: Image {
       Image(imageName)

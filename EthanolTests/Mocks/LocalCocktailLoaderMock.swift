@@ -3,29 +3,36 @@ import Foundation
 
 enum CocktailMock {
   static var whiteRussian: Cocktail = {
-    return Cocktail(name: "White Russian", description: "The White Russian is a three-ingredient cocktail based on the erstwhile Black Russian, which turns white on the addition of cream.", imageName: "whiterussian", ingredients: IngredientsMock.whiteRussian)
+    return Cocktail(name: "White Russian", description: "The White Russian is a three-ingredient cocktail based on the erstwhile Black Russian, which turns white on the addition of cream.", directions: """
+      Pour coffee liqueur and vodka into an Old Fashioned glass filled with ice.
+      Float fresh cream on top and stir slowly.
+      """, imageName: "whiterussian", ingredients: IngredientsMock.whiteRussian)
   }()
   static var mojito: Cocktail = {
-    return Cocktail(name: "Mojito", description: "The Mojito is traditionally served over ice in a highball glass and often associated with summer.", imageName: "mojito", ingredients: IngredientsMock.mojito)
+    return Cocktail(name: "Mojito", description: "The Mojito is traditionally served over ice in a highball glass and often associated with summer.", directions: """
+      Place ice, rum, eight broken up mint sprigs, lime juice, and sugar in a beverage shaker.
+      Shake well and serve over ice in a high ball glass. Top off each glass with a splash of club soda
+      Garnish each with a slice of lime and a sprig of mint.
+      """, imageName: "mojito", ingredients: IngredientsMock.mojito)
   }()
   
   static var A: Cocktail {
-    return Cocktail(name: "A", description: "", imageName: "", ingredients: [.init(id: "A", unit: .gram, amount: 1)])
+    return Cocktail(name: "A", description: "", directions: "", imageName: "", ingredients: [.init(id: "A", unit: .gram, amount: 1)])
   }
   static var B: Cocktail {
-    return Cocktail(name: "B", description: "", imageName: "", ingredients: [.init(id: "B", unit: .gram, amount: 1)])
+    return Cocktail(name: "B", description: "", directions: "", imageName: "", ingredients: [.init(id: "B", unit: .gram, amount: 1)])
   }
   static var D: Cocktail {
-    return Cocktail(name: "D", description: "", imageName: "", ingredients: [.init(id: "D", unit: .gram, amount: 1)])
+    return Cocktail(name: "D", description: "", directions: "", imageName: "", ingredients: [.init(id: "D", unit: .gram, amount: 1)])
   }
   static var AB: Cocktail {
-    return Cocktail(name: "AB", description: "", imageName: "", ingredients: [.init(id: "A", unit: .gram, amount: 1),
-                                                                .init(id: "B", unit: .gram, amount: 1)])
+    return Cocktail(name: "AB", description: "", directions: "", imageName: "", ingredients: [.init(id: "A", unit: .gram, amount: 1),
+                                                                              .init(id: "B", unit: .gram, amount: 1)])
   }
   static var ABC: Cocktail {
-    return Cocktail(name: "ABC", description: "", imageName: "", ingredients: [.init(id: "A", unit: .gram, amount: 1),
-                                                                .init(id: "B", unit: .gram, amount: 1),
-                                                                .init(id: "C", unit: .gram, amount: 1)])
+    return Cocktail(name: "ABC", description: "", directions: "", imageName: "", ingredients: [.init(id: "A", unit: .gram, amount: 1),
+                                                                               .init(id: "B", unit: .gram, amount: 1),
+                                                                               .init(id: "C", unit: .gram, amount: 1)])
   }
 }
 

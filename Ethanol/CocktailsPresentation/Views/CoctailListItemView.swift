@@ -13,27 +13,10 @@ struct CocktailsListItemView: View {
           .font(.headline)
         Text(cocktailResult.cocktail.description)
           .font(.footnote)
-//        ScrollView(.horizontal) {
-//          HStack {
-//            ForEach(cocktailResult.cocktail.ingredients, id: \.self) {
-//              tag(with: $0.id)
-//            }
-//          }
-//        }
+        CocktailIngredients(cocktailResult: cocktailResult)
       }
     }
     .padding()
-  }
-}
-
-private extension CocktailsListItemView {
-  func tag(with ingredientName: String) -> some View {
-    Text(ingredientName)
-      .padding(8)
-      .background(
-        RoundedRectangle(cornerRadius: 14)
-          .fill(Color.green.opacity(0.2))
-       )
   }
 }
 

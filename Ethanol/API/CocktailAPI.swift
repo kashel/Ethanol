@@ -13,7 +13,7 @@ public protocol LocalCocktailLoader {
 
 public struct LocalCocktailAPI: CocktailAPI {
   public let loader: LocalCocktailLoader
-  private let maxMissingImportance = 2
+  private let maxMissingImportance = 3
   
   public init(loader: LocalCocktailLoader) {
     self.loader = loader
@@ -22,11 +22,11 @@ public struct LocalCocktailAPI: CocktailAPI {
   public func getCocktails(with searchIngredients: Set<String>) -> AnyPublisher<[CocktailResult], Error> {
     let matchingCocktails = loader.load().map { cocktail -> CocktailResult in
       let cocktailIngredients = Set(cocktail.ingredients.map({ $0.name }))
-      let missingIngredients = searchIngredients.subtracting(cocktailIngredients)
+      let missingIngredients = cocktailIngredients.subtracting(searchIngredients)
       return CocktailResult(cocktail: cocktail, missingIngredients: missingIngredients)
     }.filter { (result) -> Bool in
       //TODO: count importance
-      result.missingIngredients.count <= searchIngredients.count - maxMissingImportance
+      result.missingIngredients.count <= maxMissingImportance
     }.sorted { (lhs, rhs) -> Bool in
       lhs.missingIngredients.count < rhs.missingIngredients.count
     }

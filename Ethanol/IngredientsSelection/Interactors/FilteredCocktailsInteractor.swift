@@ -14,7 +14,6 @@ struct FilteredCocktailsInteractor {
       let selectedIngredientNames = ingredientSelection.ingredients.filter{ $0.isSelected }.map{ $0.name }
       return cocktailAPI.getCocktails(with: Set(selectedIngredientNames))
     }.sink(receiveCompletion: {_ in print("completed")}) { results in
-      print(results)
       appState[\.filteredCocktails] = results
     }
   }

@@ -4,11 +4,11 @@ struct CocktailsListItemView: View {
   let cocktailResult: CocktailResult
   
   var body: some View {
-    HStack {
+    HStack(spacing: 20) {
       cocktailResult.cocktail.image
         .resizable()
         .aspectRatio(1, contentMode: .fit)
-      VStack(spacing: 20) {
+      VStack(spacing: 10) {
         Text(cocktailResult.cocktail.name)
           .font(.headline)
         Text(cocktailResult.cocktail.description)
@@ -22,6 +22,7 @@ struct CocktailsListItemView: View {
 //        }
       }
     }
+    .padding()
   }
 }
 

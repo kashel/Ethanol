@@ -35,3 +35,9 @@ private extension CocktailsListItemView {
        )
   }
 }
+
+struct CocktailsListItemView_Preview: PreviewProvider {
+  @ViewBuilder static var previews: CocktailsListItemView  {
+    CocktailsListItemView(cocktailResult: CocktailResult(cocktail: CocktailMock.mojito, missingIngredients: ["a", "b"]))
+  }
+}

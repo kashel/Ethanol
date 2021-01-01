@@ -37,6 +37,7 @@
 		97B00ACD255728D700D7C2F4 /* IngredientGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00ACC255728D700D7C2F4 /* IngredientGroupView.swift */; };
 		97B00AD22557290000D7C2F4 /* IngredientTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AD12557290000D7C2F4 /* IngredientTileView.swift */; };
 		97B00AD72557290D00D7C2F4 /* ExpandedSelectedIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B00AD62557290D00D7C2F4 /* ExpandedSelectedIngredientsView.swift */; };
+		97C01E36259E36AF00DD562C /* CocktailItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C01E35259E36AF00DD562C /* CocktailItemView.swift */; };
 		97F9B2622598E8AC00632554 /* ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 97F9B2612598E8AC00632554 /* ingredients.json */; };
 		97F9B26E2598EBC000632554 /* IngredientDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9B26D2598EBC000632554 /* IngredientDTO.swift */; };
 		97F9B27B2598EC5500632554 /* IngredientDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9B27A2598EC5500632554 /* IngredientDTOMapper.swift */; };
@@ -105,6 +106,7 @@
 		97B00ACC255728D700D7C2F4 /* IngredientGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientGroupView.swift; sourceTree = "<group>"; };
 		97B00AD12557290000D7C2F4 /* IngredientTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTileView.swift; sourceTree = "<group>"; };
 		97B00AD62557290D00D7C2F4 /* ExpandedSelectedIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedSelectedIngredientsView.swift; sourceTree = "<group>"; };
+		97C01E35259E36AF00DD562C /* CocktailItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailItemView.swift; sourceTree = "<group>"; };
 		97F9B2612598E8AC00632554 /* ingredients.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ingredients.json; sourceTree = "<group>"; };
 		97F9B26D2598EBC000632554 /* IngredientDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDTO.swift; sourceTree = "<group>"; };
 		97F9B27A2598EC5500632554 /* IngredientDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDTOMapper.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				973C27A7259DF5AD001936F8 /* CocktailsListView.swift */,
 				973C27AF259DF8CD001936F8 /* CoctailListItemView.swift */,
+				97C01E35259E36AF00DD562C /* CocktailItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				DC5C44572560489500C2AB17 /* Store.swift in Sources */,
 				97768E6925800D0E00E64532 /* View+readSize.swift in Sources */,
 				97B00AA125570CB700D7C2F4 /* CocktailAPI.swift in Sources */,
+				97C01E36259E36AF00DD562C /* CocktailItemView.swift in Sources */,
 				97768E5F258007AA00E64532 /* CollapsedSelectedIngredientsView.swift in Sources */,
 				97F9B26E2598EBC000632554 /* IngredientDTO.swift in Sources */,
 				974389B1258C1786008BC321 /* ActiveSheetInteractor.swift in Sources */,

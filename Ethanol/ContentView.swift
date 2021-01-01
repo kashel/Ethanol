@@ -10,7 +10,7 @@ import Combine
 
 struct ContentView: View {
   @Environment(\.injected) private var injected: DependencyContainer
-  private let tagsSectionHeight: CGFloat = 80
+  private let tagsSectionHeight: CGFloat = 110
   @State private var activeSheet: Sheet?
   @State private var showSheet: Bool = false
   

@@ -18,7 +18,7 @@ struct FilteredCocktailsInteractor {
     }
   }
 }
-
+  
 private extension FilteredCocktailsInteractor {
   var update: AnyPublisher<IngredientSelectionObservedModel, Never> {
     appState.updates(for: \.ingredientSelection)

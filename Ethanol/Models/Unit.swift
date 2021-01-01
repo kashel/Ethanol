@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Unit {
+enum Unit: String {
   case gram
   case ml
   case piece

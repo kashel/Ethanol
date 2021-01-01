@@ -6,10 +6,16 @@ struct CocktailsListView: View {
   @State private var filteredCoctails: [CocktailResult] = []
   
   var body: some View {
-    List {
-      ForEach(filteredCoctails, id:\.self) {
-        CocktailsListItemView(cocktailResult: $0)
+    NavigationView {
+      List(filteredCoctails, id: \.self) {
+        let result = $0
+        NavigationLink.init(
+          destination: CocktailItemView(cocktailResult: $0),
+          label: {
+            CocktailsListItemView(cocktailResult: result)
+          })
       }
+      .navigationTitle("Matching cocktails")
     }
     .onReceive(update, perform: { filteredCoctails = $0 })
   }

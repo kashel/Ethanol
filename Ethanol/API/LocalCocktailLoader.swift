@@ -5,13 +5,18 @@ public protocol CocktailLoader {
 }
 
 public struct LocalCocktailLoadere: CocktailLoader {
+  private let mapper = CocktailDTOMapper()
+  
   public func load() -> Set<Cocktail> {
     let urls = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: "Drinks")
-    urls?.map({ $0.absoluteString }).forEach({print($0)})
+    guard let cocktails = urls?.map({url -> CocktailDTO in
+      Ethanol.load(url: url)
+    })
+    .map(mapper.map) else {
+      return []
+    }
     
-    let mock = LocalCocktailLoaderMock()
-    mock.availableCocktails = [CocktailMock.mojito, CocktailMock.whiteRussian]
-    return mock.load()
+    return Set(cocktails)
   }
   
   

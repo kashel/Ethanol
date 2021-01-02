@@ -11,7 +11,7 @@ struct CocktailDTO: Decodable {
   
   let name: String
   let description: String
-  let directions: String
+  let directions: [String]
   let image: String
   let ingredients: [IngredientDTO]
 }

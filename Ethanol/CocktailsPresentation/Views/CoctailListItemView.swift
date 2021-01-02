@@ -8,13 +8,15 @@ struct CocktailsListItemView: View {
       cocktailResult.cocktail.image
         .resizable()
         .aspectRatio(1, contentMode: .fit)
+        .frame(width: 150, height: 150)
       VStack(spacing: 10) {
         Text(cocktailResult.cocktail.name)
           .font(.headline)
         Text(cocktailResult.cocktail.description)
           .font(.footnote)
+          .multilineTextAlignment(.leading)
         CocktailIngredients(cocktailResult: cocktailResult)
-      }
+      }.frame(width: 150)
     }
     .padding()
   }

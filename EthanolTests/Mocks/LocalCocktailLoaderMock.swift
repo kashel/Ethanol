@@ -53,7 +53,7 @@ enum IngredientsMock {
   ]
 }
 
-class LocalCocktailLoaderMock: LocalCocktailLoader {
+class LocalCocktailLoaderMock: CocktailLoader {
   var availableCocktails: Set<Cocktail> = []
   
   var loadCalled = false

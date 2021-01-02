@@ -42,6 +42,9 @@
 		97CFE068259F9B1700CA47BB /* _FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CFE067259F9B1700CA47BB /* _FlexibleView.swift */; };
 		97CFE077259F9DC100CA47BB /* CocktailIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CFE076259F9DC100CA47BB /* CocktailIngredients.swift */; };
 		97CFE07F25A0B4C600CA47BB /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CFE07E25A0B4C600CA47BB /* Load.swift */; };
+		97CFE08425A0B97800CA47BB /* LocalCocktailLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CFE08325A0B97800CA47BB /* LocalCocktailLoader.swift */; };
+		97CFE08925A0BBDA00CA47BB /* CocktailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CFE08825A0BBDA00CA47BB /* CocktailDTO.swift */; };
+		97CFE08E25A0BBF000CA47BB /* CocktailDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CFE08D25A0BBF000CA47BB /* CocktailDTOMapper.swift */; };
 		97F9B2622598E8AC00632554 /* ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 97F9B2612598E8AC00632554 /* ingredients.json */; };
 		97F9B26E2598EBC000632554 /* IngredientDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9B26D2598EBC000632554 /* IngredientDTO.swift */; };
 		97F9B27B2598EC5500632554 /* IngredientDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9B27A2598EC5500632554 /* IngredientDTOMapper.swift */; };
@@ -115,6 +118,9 @@
 		97CFE067259F9B1700CA47BB /* _FlexibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _FlexibleView.swift; sourceTree = "<group>"; };
 		97CFE076259F9DC100CA47BB /* CocktailIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailIngredients.swift; sourceTree = "<group>"; };
 		97CFE07E25A0B4C600CA47BB /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
+		97CFE08325A0B97800CA47BB /* LocalCocktailLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCocktailLoader.swift; sourceTree = "<group>"; };
+		97CFE08825A0BBDA00CA47BB /* CocktailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailDTO.swift; sourceTree = "<group>"; };
+		97CFE08D25A0BBF000CA47BB /* CocktailDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailDTOMapper.swift; sourceTree = "<group>"; };
 		97F9B2612598E8AC00632554 /* ingredients.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ingredients.json; sourceTree = "<group>"; };
 		97F9B26D2598EBC000632554 /* IngredientDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDTO.swift; sourceTree = "<group>"; };
 		97F9B27A2598EC5500632554 /* IngredientDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDTOMapper.swift; sourceTree = "<group>"; };
@@ -266,6 +272,8 @@
 				978090032557091B00CD66BB /* Unit.swift */,
 				97B00A9725570C3600D7C2F4 /* Cocktail.swift */,
 				972348E3259D043600C118F5 /* CocktailResult.swift */,
+				97CFE08825A0BBDA00CA47BB /* CocktailDTO.swift */,
+				97CFE08D25A0BBF000CA47BB /* CocktailDTOMapper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				97B00AA025570CB700D7C2F4 /* CocktailAPI.swift */,
+				97CFE08325A0B97800CA47BB /* LocalCocktailLoader.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -534,6 +543,7 @@
 				DC5C447625604CF200C2AB17 /* Interactors.swift in Sources */,
 				DC5C44572560489500C2AB17 /* Store.swift in Sources */,
 				97768E6925800D0E00E64532 /* View+readSize.swift in Sources */,
+				97CFE08925A0BBDA00CA47BB /* CocktailDTO.swift in Sources */,
 				97B00AA125570CB700D7C2F4 /* CocktailAPI.swift in Sources */,
 				97C01E36259E36AF00DD562C /* CocktailItemView.swift in Sources */,
 				97768E5F258007AA00E64532 /* CollapsedSelectedIngredientsView.swift in Sources */,
@@ -548,6 +558,7 @@
 				97F9B27B2598EC5500632554 /* IngredientDTOMapper.swift in Sources */,
 				97B00AA725570E5B00D7C2F4 /* CocktailRepository.swift in Sources */,
 				DC0F3B3C255732BF009E449B /* QStack.swift in Sources */,
+				97CFE08E25A0BBF000CA47BB /* CocktailDTOMapper.swift in Sources */,
 				9721CCD1256EE75000BDF884 /* TileSize.swift in Sources */,
 				973C27A8259DF5AD001936F8 /* CocktailsListView.swift in Sources */,
 				97CFE07F25A0B4C600CA47BB /* Load.swift in Sources */,
@@ -566,6 +577,7 @@
 				97CFE077259F9DC100CA47BB /* CocktailIngredients.swift in Sources */,
 				97CFE068259F9B1700CA47BB /* _FlexibleView.swift in Sources */,
 				97B00AB0255720BF00D7C2F4 /* IngredientsSelectionView.swift in Sources */,
+				97CFE08425A0B97800CA47BB /* LocalCocktailLoader.swift in Sources */,
 				97F9B291259CA2B300632554 /* View+Presented.swift in Sources */,
 				97B00A9825570C3600D7C2F4 /* Cocktail.swift in Sources */,
 				973C27A1259DDE4F001936F8 /* LocalCocktailLoaderMock.swift in Sources */,

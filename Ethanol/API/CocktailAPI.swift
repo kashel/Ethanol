@@ -7,15 +7,11 @@ public protocol CocktailAPI {
   func getCocktails(with ingredients: Set<String>) -> AnyPublisher<[CocktailResult], Error>
 }
 
-public protocol LocalCocktailLoader {
-  func load() -> Set<Cocktail>
-}
-
 public struct LocalCocktailAPI: CocktailAPI {
-  public let loader: LocalCocktailLoader
+  public let loader: CocktailLoader
   private let maxMissingImportance = 3
   
-  public init(loader: LocalCocktailLoader) {
+  public init(loader: CocktailLoader) {
     self.loader = loader
   }
   

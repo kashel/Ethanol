@@ -4,8 +4,7 @@ struct Interactors {
   let filteredCocktails: FilteredCocktailsInteractor
   
   init(appState: Store<AppState>) {
-    let loader = LocalCocktailLoaderMock()
-    loader.availableCocktails = [CocktailMock.mojito, CocktailMock.whiteRussian]
+    let loader = LocalCocktailLoadere()
     let cocktailAPI = LocalCocktailAPI(loader: loader)
     self.ingredientsSelection = BaseIngredientsSelectionInteractor(appState: appState)
     self.activeSheet = BaseActiveSheetInteractor(appState: appState)

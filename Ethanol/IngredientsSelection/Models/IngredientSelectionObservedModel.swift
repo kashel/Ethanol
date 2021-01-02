@@ -20,16 +20,7 @@ private extension IngredientSelectionObservedModel {
   
   static func parseIngredients() -> [Ingredient] {
     let mapper = IngredientDTOMapper()
-    if let url = Bundle.main.url(forResource: "ingredients", withExtension: "json") {
-      do {
-        let data = try Data(contentsOf: url)
-        let ingredientDTOs = try JSONDecoder().decode([IngredientDTO].self, from: data)
-        return ingredientDTOs.map(mapper.map)
-      }
-      catch {
-        fatalError("Unable to parse json with ingredients")
-      }
-    }
-    return []
+    let ingredientDTOs: [IngredientDTO] = load("ingredients", extension: "json")
+    return ingredientDTOs.map(mapper.map)
   }
 }

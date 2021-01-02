@@ -9,7 +9,7 @@ public protocol CocktailAPI {
 
 public struct LocalCocktailAPI: CocktailAPI {
   public let loader: CocktailLoader
-  private let maxMissingImportance = 3
+  private let maxMissingImportance = 2
   
   public init(loader: CocktailLoader) {
     self.loader = loader
@@ -22,9 +22,14 @@ public struct LocalCocktailAPI: CocktailAPI {
       return CocktailResult(cocktail: cocktail, missingIngredients: missingIngredients)
     }.filter { (result) -> Bool in
       //TODO: count importance
-      result.missingIngredients.count <= maxMissingImportance
+      result.missingIngredients.count <= maxMissingImportance && result.cocktail.ingredients.count > maxMissingImportance
     }.sorted { (lhs, rhs) -> Bool in
-      lhs.missingIngredients.count < rhs.missingIngredients.count
+      if lhs.missingIngredients.count < rhs.missingIngredients.count {
+        return true
+      } else if lhs.missingIngredients.count == rhs.missingIngredients.count {
+        return lhs.cocktail.ingredients.count > rhs.cocktail.ingredients.count
+      }
+      return false
     }
     
     return [matchingCocktails].publisher.setFailureType(to: Error.self).eraseToAnyPublisher()

@@ -34,6 +34,11 @@ struct IngredientGroupRowView: View {
 private extension IngredientGroupRowView {
   func select(ingredient: Ingredient) {
     injected.interactors.ingredientsSelection.select(ingredient: ingredient)
+    simpleSuccess()
+  }
+  func simpleSuccess() {
+      let generator = UINotificationFeedbackGenerator()
+      generator.notificationOccurred(.success)
   }
 }
 

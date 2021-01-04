@@ -22,7 +22,6 @@ struct CocktailItemView: View {
         .padding([.top, .bottom])
         Spacer()
         Text(cocktailResult.cocktail.directions)
-          .multilineTextAlignment(.leading)
       }
       .padding()
     })

@@ -21,7 +21,7 @@ struct IngredientTileView: View {
           .font(.system(.subheadline))
       }
     }
-    .background(RadialGradient(gradient: Gradient(colors: [.clear, .black]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: /*@START_MENU_TOKEN@*/5/*@END_MENU_TOKEN@*/, endRadius: 150))
+    .background(RadialGradient(gradient: Gradient(colors: [.white, .clear, .black]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: 2, endRadius: 150))
     .frame(width: 85, height: 85)
     .cornerRadius(10)
   }
@@ -33,3 +33,4 @@ struct IngredientTileView_Previews: PreviewProvider {
     IngredientTileView(ingredient: orange)
   }
 }
+	

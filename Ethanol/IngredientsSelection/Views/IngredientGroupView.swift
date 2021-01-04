@@ -10,30 +10,33 @@ struct IngredientGroupView: View {
   let backgroundColor: Color
   
   var body: some View {
-    VStack(alignment: .leading) {
-      HStack {
-        Text(ingredientGroup.name)
-          .foregroundColor(.white)
-        Spacer()
-      }      
+    ZStack {
+      Color.white
       VStack(alignment: .leading) {
-        let ingredients = selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }
-        //support portrait mode only currenty
-        let screenWidth = screenSize.width
-        let rowsParams = calculateRowsParams(availableWidth: screenWidth, ingredientsCount: ingredients.count)
-        
-        IngredientGroupRowView(ingredientGroup: ingredientGroup, ingredients: ingredients[0..<rowsParams.numberOfItemsFirstRow], hasMore: .no)
-        if rowsParams.numberOfRows > 1 {
-          let numberOfItemsSecondRow = min(ingredients.count - rowsParams.rowCapacity, rowsParams.rowCapacity) - (rowsParams.hasMore ? 1 : 0)
-          let upperBound = rowsParams.numberOfItemsFirstRow + numberOfItemsSecondRow
-          IngredientGroupRowView(ingredientGroup: ingredientGroup,
-                                 ingredients: ingredients[rowsParams.numberOfItemsFirstRow..<upperBound],
-                                 hasMore: rowsParams.hasMore ? .yes(ingredients[upperBound...]) : .no)
+        HStack {
+          Text(ingredientGroup.name)
+            .foregroundColor(.white)
+          Spacer()
+        }
+        VStack(alignment: .leading) {
+          let ingredients = selection.ingredients.filter { !$0.isSelected && $0.groups.contains(ingredientGroup) }
+          //support portrait mode only currenty
+          let screenWidth = screenSize.width
+          let rowsParams = calculateRowsParams(availableWidth: screenWidth, ingredientsCount: ingredients.count)
+          
+          IngredientGroupRowView(ingredientGroup: ingredientGroup, ingredients: ingredients[0..<rowsParams.numberOfItemsFirstRow], hasMore: .no)
+          if rowsParams.numberOfRows > 1 {
+            let numberOfItemsSecondRow = min(ingredients.count - rowsParams.rowCapacity, rowsParams.rowCapacity) - (rowsParams.hasMore ? 1 : 0)
+            let upperBound = rowsParams.numberOfItemsFirstRow + numberOfItemsSecondRow
+            IngredientGroupRowView(ingredientGroup: ingredientGroup,
+                                   ingredients: ingredients[rowsParams.numberOfItemsFirstRow..<upperBound],
+                                   hasMore: rowsParams.hasMore ? .yes(ingredients[upperBound...]) : .no)
+          }
         }
       }
+      .padding()
+      .background(RadialGradient(gradient: Gradient(colors: [backgroundColor.opacity(0.5), backgroundColor.opacity(0.9)]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: 20, endRadius: 180))
     }
-    .padding()
-    .background(RadialGradient(gradient: Gradient(colors: [.white, backgroundColor]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: 10, endRadius: 200))
     .onReceive(update, perform: { selection = $0 })
   }
 }

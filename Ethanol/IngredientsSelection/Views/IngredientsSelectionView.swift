@@ -8,14 +8,22 @@ struct IngredientsSelectionView: View {
   @State private var selection: IngredientSelectionObservedModel = .init()
   
   var body: some View {
-    VStack {
+    let unsulectedIngredientsGroups = selection.ingredients.filter({ !$0.isSelected }).flatMap({ $0.groups })
+    var allCases = IngredientGroup.allCases.filter({ group in
+      unsulectedIngredientsGroups.contains(group)
+    })
+    let fist = IngredientGroup.allCases.first!
+    let last = IngredientGroup.allCases.last!
+    allCases = IngredientGroup.allCases.dropFirst().dropLast()
+    
+    return VStack {
       ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false, content: {
         VStack(spacing: 0) {
-          ForEach(IngredientGroup.allCases, id: \.self) { ingredientGroup in
+          components(for: fist, heightPadding: 30)
+          ForEach(allCases, id: \.self) { ingredientGroup in
             components(for: ingredientGroup)
-              .presented(selection.ingredients.filter { ingredient in
-                        ingredient.groups.contains(ingredientGroup) && !ingredient.isSelected }.isEmpty == false)
           }
+          components(for: last, bottomPadding: 170)
         }
       })
     }
@@ -30,8 +38,8 @@ struct IngredientsSelectionView_Previews: PreviewProvider {
 }
 
 private extension IngredientsSelectionView {
-  func components(for group: IngredientGroup) -> some View {
-    IngredientGroupView(ingredientGroup: group, backgroundColor: group.color)
+  func components(for group: IngredientGroup, heightPadding: CGFloat = 0, bottomPadding: CGFloat = 0) -> some View {
+    IngredientGroupView(ingredientGroup: group, backgroundColor: group.color, heightPadding: heightPadding, bottomPadding: bottomPadding)
       .environment(\.injected, injected)
   }
 }

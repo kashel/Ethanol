@@ -11,27 +11,32 @@ struct CollapsedSelectedIngredientsView: View {
   @State private var editMode = EditMode.active
   
     var body: some View {
-      VStack {
-        Button(action: {
-          injected.interactors.activeSheet.present(.filteredCocktails)
-        }) {
-          Text("\(filteredCocktails.count) 🍹")
-        }
-        .disabled(filteredCocktails.count == 0)
-        HStack {
-          ScrollView(.horizontal) {
-            HStack {
-              ForEach(selection.ingredients.filter(\.isSelected), id: \.self) {
-                tag(with: $0.name)
+      ZStack {
+        Color.black.opacity(0.8)
+        VStack {
+          Button(action: {
+            injected.interactors.activeSheet.present(.filteredCocktails)
+          }) {
+            Text("\(filteredCocktails.count) 🍹")
+          }
+          .disabled(filteredCocktails.count == 0)
+          HStack {
+            ScrollView(.horizontal) {
+              HStack {
+                ForEach(selection.ingredients.filter(\.isSelected), id: \.self) {
+                  tag(with: $0.name)
+                }
               }
             }
+            Button(action: {
+              injected.interactors.activeSheet.present(.selectedIngredients)
+            }) {
+              Image(systemName: "arrow.up.backward.and.arrow.down.forward")
+            }
           }
-          Button(action: {
-            injected.interactors.activeSheet.present(.selectedIngredients)
-          }) {
-            Image(systemName: "arrow.up.backward.and.arrow.down.forward")
-          }
+          .frame(minHeight: 40, idealHeight: 40, maxHeight: 40)
         }
+        .padding()
       }
       .onReceive(ingredientSelectionUpdate, perform: { selection = $0 })
       .onReceive(filteredCocktailsUpdate, perform: { filteredCocktails = $0 })

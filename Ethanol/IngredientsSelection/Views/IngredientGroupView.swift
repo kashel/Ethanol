@@ -5,14 +5,16 @@ struct IngredientGroupView: View {
   @Environment(\.injected) private var injected: DependencyContainer
   @State private var selection: IngredientSelectionObservedModel = .init()
   private let screenSize: CGSize = UIScreen.main.bounds.size
-  
   let ingredientGroup: IngredientGroup
   let backgroundColor: Color
+  let heightPadding: CGFloat
+  let bottomPadding: CGFloat
   
   var body: some View {
     ZStack {
       Color.white
       VStack(alignment: .leading) {
+        Color.clear.frame(height: heightPadding)
         HStack {
           Text(ingredientGroup.name)
             .foregroundColor(.white)
@@ -33,6 +35,7 @@ struct IngredientGroupView: View {
                                    hasMore: rowsParams.hasMore ? .yes(ingredients[upperBound...]) : .no)
           }
         }
+        Color.clear.frame(height: bottomPadding)
       }
       .padding()
       .background(RadialGradient(gradient: Gradient(colors: [backgroundColor.opacity(0.5), backgroundColor.opacity(0.9)]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: 20, endRadius: 180))
@@ -44,7 +47,7 @@ struct IngredientGroupView: View {
 struct IngredientGroupView_Previews: PreviewProvider {
   static var previews: some View {
     let group = IngredientGroup.common
-    IngredientGroupView(ingredientGroup: group, backgroundColor: Color.blue)
+    IngredientGroupView(ingredientGroup: group, backgroundColor: Color.blue, heightPadding: 0, bottomPadding: 0)
       .environment(\.injected, DependencyContainer.defaultValue)
   }
 }

@@ -10,12 +10,11 @@ import Combine
 
 struct ContentView: View {
   @Environment(\.injected) private var injected: DependencyContainer
-  private let tagsSectionHeight: CGFloat = 110
+  private let tagsSectionHeight: CGFloat = 120
   @State private var activeSheet: Sheet?
   @State private var showSheet: Bool = false
   
   var body: some View {
-    GeometryReader { geometry in
       ZStack {
         Color.clear
         VStack {
@@ -23,16 +22,18 @@ struct ContentView: View {
             IngredientsSelectionView()
               .environment(\.injected, injected)
           }
-          .frame(height: geometry.size.height - tagsSectionHeight)
-          CollapsedSelectedIngredientsView()
-            .environment(\.injected, injected)
-            .padding()
-            .frame(width: geometry.size.width, height: tagsSectionHeight)
+        }.ignoresSafeArea()
+        HStack {
+          VStack {
+            Spacer()
+              CollapsedSelectedIngredientsView()
+                .environment(\.injected, injected)
+                .frame(height: tagsSectionHeight)
+                .cornerRadius(30)
+          }
         }
-        .frame(width: geometry.size.width)
+        .padding()
       }
-      .edgesIgnoringSafeArea([.leading, .trailing, .bottom])
-    }
     .onReceive(update, perform: { activeSheet = $0 })
     .sheet(item: $activeSheet, content: { sheet in
       switch sheet {

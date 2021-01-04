@@ -5,23 +5,25 @@ struct CocktailItemView: View {
   
   var body: some View {
     ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, content: {
-      VStack {
+      VStack(alignment: .center) {
         Text(cocktailResult.cocktail.name)
-          .font(.title)
-        cocktailResult.cocktail.image
-          .resizable()
-          .scaledToFit()
-        HStack {
-          VStack(alignment: .leading) {
-            ForEach(Array(cocktailResult.cocktail.ingredients), id: \.self) {
-              return Text("- \($0.amount) " + $0.unit.rawValue + " " + $0.name)
+          .font(.title).clipped(antialiased: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+          cocktailResult.cocktail.image
+            .resizable()
+            .scaledToFit()
+          HStack {
+            VStack(alignment: .leading) {
+              ForEach(Array(cocktailResult.cocktail.ingredients), id: \.self) {
+                return Text("- \($0.amount) " + $0.unit.rawValue + " " + $0.name)
+              }
             }
+            Spacer()
           }
+          .padding([.top, .bottom])
           Spacer()
+          Text(cocktailResult.cocktail.directions)
         }
-        .padding([.top, .bottom])
-        Spacer()
-        Text(cocktailResult.cocktail.directions)
       }
       .padding()
     })

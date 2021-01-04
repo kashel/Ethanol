@@ -12,18 +12,23 @@ struct IngredientsSelectionView: View {
     var allCases = IngredientGroup.allCases.filter({ group in
       unsulectedIngredientsGroups.contains(group)
     })
-    let fist = IngredientGroup.allCases.first!
-    let last = IngredientGroup.allCases.last!
-    allCases = IngredientGroup.allCases.dropFirst().dropLast()
+    
+    let first = allCases.first
+    let last = allCases.count > 1 ? allCases.last : nil
+    allCases = allCases.dropFirst().dropLast()
     
     return VStack {
       ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false, content: {
         VStack(spacing: 0) {
-          components(for: fist, heightPadding: 30)
+          if let first = first {
+            components(for: first, heightPadding: 30)
+          }
           ForEach(allCases, id: \.self) { ingredientGroup in
             components(for: ingredientGroup)
           }
-          components(for: last, bottomPadding: 170)
+          if let last = last {
+            components(for: last, bottomPadding: 170)
+          }
         }
       })
     }

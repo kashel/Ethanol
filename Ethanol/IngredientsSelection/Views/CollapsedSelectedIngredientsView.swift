@@ -31,7 +31,7 @@ struct CollapsedSelectedIngredientsView: View {
             Button(action: {
               injected.interactors.activeSheet.present(.selectedIngredients)
             }) {
-              Image(systemName: "arrow.up.backward.and.arrow.down.forward")
+              Image(systemName: "pencil")
             }
           }
           .frame(minHeight: 40, idealHeight: 40, maxHeight: 40)

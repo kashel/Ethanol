@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9712FCB525A3BC86002B0F43 /* Array+Chunked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9712FCB425A3BC86002B0F43 /* Array+Chunked.swift */; };
 		9721CCD1256EE75000BDF884 /* TileSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721CCD0256EE75000BDF884 /* TileSize.swift */; };
 		972348C2259CCF2200C118F5 /* IngredientGroupRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972348C1259CCF2200C118F5 /* IngredientGroupRowView.swift */; };
 		972348CB259CF40300C118F5 /* LocalCocktailAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972348CA259CF40300C118F5 /* LocalCocktailAPITests.swift */; };
@@ -78,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9712FCB425A3BC86002B0F43 /* Array+Chunked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Chunked.swift"; sourceTree = "<group>"; };
 		9721CCD0256EE75000BDF884 /* TileSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSize.swift; sourceTree = "<group>"; };
 		972348C1259CCF2200C118F5 /* IngredientGroupRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientGroupRowView.swift; sourceTree = "<group>"; };
 		972348CA259CF40300C118F5 /* LocalCocktailAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCocktailAPITests.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				97CFE062259F9A7700CA47BB /* FlexibleView.swift */,
 				97CFE067259F9B1700CA47BB /* _FlexibleView.swift */,
 				97CFE07E25A0B4C600CA47BB /* Load.swift */,
+				9712FCB425A3BC86002B0F43 /* Array+Chunked.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				97CFE08425A0B97800CA47BB /* LocalCocktailLoader.swift in Sources */,
 				97F9B291259CA2B300632554 /* View+Presented.swift in Sources */,
 				97B00A9825570C3600D7C2F4 /* Cocktail.swift in Sources */,
+				9712FCB525A3BC86002B0F43 /* Array+Chunked.swift in Sources */,
 				973C27A1259DDE4F001936F8 /* LocalCocktailLoaderMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,7 +6,7 @@
         {
             "quantity": "1",
             "measure": "cup",
-            "ingredient": "crushed ice"
+            "ingredient": "ice"
         },
         {
             "quantity": "2",
@@ -57,7 +57,7 @@
     "directions": [
         "To make the gin infusion: blend the gin with keffir lime leaves. Combine 1 double kefir lime leaf per 2oz gin.",
         "Strain the result through a cheesecloth and retain infused gin.",
-        "Combine infused gin, other liquid ingredients, and crushed ice with a blender.",
+        "Combine infused gin, other liquid ingredients, and ice with a blender.",
         "Serve in a fancy glass with lime slice, keffir leaf and dash of nutmeg as garnish."
     ],
     "image": "venus-flytrap.jpg",

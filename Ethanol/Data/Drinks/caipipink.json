@@ -5,8 +5,8 @@
   "ingredients": [
       {
           "quantity": "",
-          "measure": "Croft Pink",
-          "ingredient": ""
+          "measure": "pice",
+          "ingredient": "Croft Pink"
       },
       {
           "quantity": "3",
@@ -25,8 +25,8 @@
       },
       {
           "quantity": "2",
-          "measure": "lime wedges",
-          "ingredient": ""
+          "measure": "pice",
+          "ingredient": "lime wedges"
       },
       {
           "quantity": "500",
@@ -40,14 +40,14 @@
       },
       {
           "quantity": "",
-          "measure": "crushed ice",
-          "ingredient": ""
+          "measure": "some",
+          "ingredient": "ice"
       }
   ],
   "directions": [
       "Sugar Syrup: add 500ml of water and 500g of sugar into a medium hot pan and stir until the sugar is dissolved. Turn off the heat as soon as it starts to boil. Place the syrup into a bottle with lid.",
       "Place the lime, the red fruits and 15ml of syrup in the the glass.",
-      "Muddle and add crushed ice before pouring Croft Pink to top."
+      "Muddle and add ice before pouring Croft Pink to top."
   ],
   "image": "caipireja.jpg",
   "source": "https://croftpink.com/cocktail/caipipink/",

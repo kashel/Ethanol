@@ -29,28 +29,28 @@
             "ingredient": "sliced"
         },{
             "quantity": "2",
-            "measure": "pineapple juice",
-            "ingredient": ""
+            "measure": "pice",
+            "ingredient": "pineapple juice"
         },
         {
             "quantity": "2",
-            "measure": "cups orange juice",
-            "ingredient": ""
+            "measure": "cups",
+            "ingredient": "orange juice"
         },
         {
             "quantity": "2",
-            "measure": "cups cream",
-            "ingredient": "(optional)"
+            "measure": "cups",
+            "ingredient": "cream"
         },
         {
-            "quantity": "As you like",
-            "measure": "Honey, to taste",
-            "ingredient": "(optional)"
+            "quantity": "",
+            "measure": "As you like",
+            "ingredient": "Honey"
         },
         {
-            "quantity": "As you like",
-            "measure": "Crushed nuts, to taste",
-            "ingredient": "(optional)"
+            "quantity": "",
+            "measure": "as you like",
+            "ingredient": "nuts"
         }
     ],
     

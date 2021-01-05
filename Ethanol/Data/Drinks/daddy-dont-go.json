@@ -11,7 +11,7 @@
         {
             "quantity": "1",
             "measure": "part",
-            "ingredient": "Fruit punch juice (Orange, pineapple and passion fruit)"
+            "ingredient": "Fruit punch juice"
         },
         {
             "quantity": "",
@@ -21,7 +21,7 @@
         {
             "quantity": "",
             "measure": "",
-            "ingredient": "Mint"
+            "ingredient": "Mint Leaves"
         }
     ],
     "directions": [

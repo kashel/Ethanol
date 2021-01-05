@@ -26,7 +26,7 @@
         {
             "quantity": "1",
             "measure": "cup",
-            "ingredient": "crushed ice"
+            "ingredient": "ice"
         },
 	{
             "quantity": "1",
@@ -40,7 +40,7 @@
         }
     ],
     "directions": [
-        "Combine rum, blue Curacao, pineapple juice, cream of coconut, and 1 cup crushed ice in blender.",
+        "Combine rum, blue Curacao, pineapple juice, cream of coconut, and 1 cup ice in blender.",
         "Blend on high until smooth. Pour into chilled highball glass.",
         "Garnish with a slice of pineapple and a maraschino cherry."
     ],

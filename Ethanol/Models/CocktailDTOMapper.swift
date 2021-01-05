@@ -21,7 +21,7 @@ struct CocktailDTOMapper {
     switch unitRaw {
     case "gram":
       return .gram
-    case "ml":
+    case "ml", "nilliLiters":
       return .ml
     case "pice":
       return .piece

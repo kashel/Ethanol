@@ -4,8 +4,8 @@
     "github": "kevinmel2000",
     "ingredients": [{
             "quantity": "1",
-            "measure": "banana",
-            "ingredient": ""
+            "measure": "pice",
+            "ingredient": "banana"
         },
         {
             "quantity": "1",
@@ -19,8 +19,8 @@
         },
         {
             "quantity": "1",
-            "measure": "egg",
-            "ingredient": ""
+            "measure": "pice",
+            "ingredient": "egg"
         },
         {
             "quantity": "2",

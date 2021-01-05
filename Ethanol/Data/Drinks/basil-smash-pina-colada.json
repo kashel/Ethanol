@@ -5,13 +5,13 @@
     "ingredients": [
         {
             "quantity": "4",
-            "measure": "pieces",
-            "ingredient": "lime, quartered"
+            "measure": "quarters",
+            "ingredient": "lime"
         },
         {
             "quantity": "3/4",
             "measure": "cup",
-            "ingredient": "basil or mint leaves"
+            "ingredient": "mint leaves"
         },
         {
             "quantity": "8",
@@ -31,7 +31,7 @@
         {
             "quantity": "1",
             "measure": "cup",
-            "ingredient": "canned coconut cream"
+            "ingredient": "coconut cream"
         }
     ],
     "directions": [

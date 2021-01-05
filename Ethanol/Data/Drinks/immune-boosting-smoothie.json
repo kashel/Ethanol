@@ -5,18 +5,18 @@
     "ingredients": [
         {
             "quantity": "1",
-            "measure": "apple",
-            "ingredient": ""
+            "measure": "pice",
+            "ingredient": "apple"
         },
         {
             "quantity": "1/2",
-            "measure": "banana",
-            "ingredient": ""
+            "measure": "pice",
+            "ingredient": "banana"
         },
         {
             "quantity": "1/2",
-            "measure": "lemon",
-            "ingredient": ""
+            "measure": "pice",
+            "ingredient": "lemon"
         },
         {
             "quantity": "2",

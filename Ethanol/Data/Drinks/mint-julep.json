@@ -5,8 +5,8 @@
     "ingredients": [
         {
             "quantity": "3",
-            "measure": "leaves",
-            "ingredient": "mint"
+            "measure": "",
+            "ingredient": "mint leaves"
         },
         {
             "quantity": "1",
@@ -16,7 +16,7 @@
         {
             "quantity": "1/2",
             "measure": "cup",
-            "ingredient": "crushed ice"
+            "ingredient": "ice"
         },
          {
             "quantity": "1",
@@ -31,7 +31,7 @@
     ],
     "directions": [
         "Place mint leaves and Mint Simple Syrup in a chilled julep cup. Gently press leaves against cup with back of spoon to release flavors. ",
-        "Pack cup tightly with crushed ice; pour bourbon over ice. Place mint sprig directly next to straw, and serve immediately."
+        "Pack cup tightly with ice; pour bourbon over ice. Place mint sprig directly next to straw, and serve immediately."
 
     ],
     "image": "mint-julep.jpg",

@@ -6,7 +6,7 @@
         {
             "quantity": "",
             "measure": "",
-            "ingredient": "Instant Espresso Coffee"
+            "ingredient": "Instant espresso"
         },
         {
             "quantity": "2",
@@ -32,7 +32,7 @@
     ],
     "image": "iced-coffee-frappe.jpg",
     "keywords": [
-        "espresso coffee",
+        "espresso",
         "granulated sugar",
        	"milk",
 	"ice"	

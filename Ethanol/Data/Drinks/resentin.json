@@ -1,12 +1,12 @@
 {
     "name": "Resentin",
-    "description": "Resentin is the name in Venetian dialect of a action to do after drink an espresso coffee, you need only an espresso and a little bit of grappa.",
+    "description": "Resentin is the name in Venetian dialect of a action to do after drink an espresso, you need only an espresso and a little bit of grappa.",
     "github": "claudiodriussi",
     "ingredients": [
         {
             "quantity": "1",
             "measure": "cup",
-            "ingredient": "espresso coffee"
+            "ingredient": "espresso"
         },
         {
             "quantity": "1",
@@ -15,7 +15,7 @@
         }
     ],
     "directions": [
-        "Drink and enjoy your cup of espresso coffee.",
+        "Drink and enjoy your cup of espresso.",
         "Clean it by putting some grappa in your cup and shake it (to clean the remaining coffee and sugar) then drink.",
         "If your cup is not clean you can repeat the process until the cup is perfectly clean."
     ],

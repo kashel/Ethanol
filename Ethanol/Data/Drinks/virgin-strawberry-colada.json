@@ -5,8 +5,8 @@
     "ingredients": [
         {
             "quantity": "8",
-            "measure": "strawberries",
-            "ingredient": ""
+            "measure": "pice",
+            "ingredient": "strawberries"
         },
         {
             "quantity": "4",
@@ -21,7 +21,7 @@
         {
             "quantity": "1",
             "measure": "cup",
-            "ingredient": "crushed ice"
+            "ingredient": "ice"
         }
     ],
     "directions": [

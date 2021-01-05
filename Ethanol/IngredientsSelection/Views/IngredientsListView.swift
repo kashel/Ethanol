@@ -11,6 +11,7 @@ struct IngredientsListView: View {
     let rows = ingredients.chunked(into: 4)
     ZStack {
       Color.white
+        .ignoresSafeArea()
       RadialGradient(gradient: Gradient(colors: [ingredientGroup.color.opacity(0.5), ingredientGroup.color.opacity(0.9)]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: 20, endRadius: 380)
         .ignoresSafeArea()
       ScrollView(.vertical) {

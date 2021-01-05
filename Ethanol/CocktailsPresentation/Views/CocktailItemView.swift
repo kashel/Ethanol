@@ -15,7 +15,7 @@ struct CocktailItemView: View {
           HStack {
             VStack(alignment: .leading) {
               ForEach(Array(cocktailResult.cocktail.ingredients), id: \.self) {
-                return Text("- \($0.amount) " + $0.unit.rawValue + " " + $0.name)
+                return Text("- \($0.amount) " + $0.unit.displayName + " " + $0.name)
               }
             }
             Spacer()

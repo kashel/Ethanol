@@ -7,8 +7,22 @@
 
 import Foundation
 
-enum Unit: String {
+enum Unit {
   case gram
   case ml
   case piece
+  case other(name: String)
+  
+  var displayName: String {
+    switch self {
+    case .gram:
+      return "gram"
+    case .ml:
+      return "ml"
+    case .piece:
+      return "pice"
+    case .other(let name):
+      return name
+    }
+  }
 }

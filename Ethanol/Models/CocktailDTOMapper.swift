@@ -10,9 +10,23 @@ struct CocktailDTOMapper {
   }
   
   private func mapIngredient(dto: CocktailDTO.IngredientDTO) -> Cocktail.Ingredient {
-    //TODO: fix me
-    let unit = Unit(rawValue: dto.measure) ?? .gram
+
+    let unit = mapUnit(dto.measure)
     let amount = Int(dto.quantity) ?? 0
     return Cocktail.Ingredient(id: dto.ingredient.lowercased(), unit: unit, amount: amount)
+  }
+  
+  private func mapUnit(_ unit : String) -> Unit {
+    let unitRaw = unit.lowercased()
+    switch unitRaw {
+    case "gram":
+      return .gram
+    case "ml":
+      return .ml
+    case "pice":
+      return .piece
+    default:
+      return .other(name: unitRaw)
+    }
   }
 }

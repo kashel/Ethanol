@@ -12,7 +12,7 @@ struct CocktailDTOMapper {
   private func mapIngredient(dto: CocktailDTO.IngredientDTO) -> Cocktail.Ingredient {
 
     let unit = mapUnit(dto.measure)
-    let amount = Int(dto.quantity) ?? 0
+    let amount = dto.quantity
     let id = mapIngredientId(dto.ingredient)
     return Cocktail.Ingredient(id: id, unit: unit, amount: amount)
   }

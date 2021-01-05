@@ -16,7 +16,7 @@ struct CocktailsListItemView: View {
           .font(.footnote)
           .multilineTextAlignment(.leading)
         CocktailIngredients(cocktailResult: cocktailResult)
-      }.frame(width: 150)
+      }
     }
     .padding()
   }

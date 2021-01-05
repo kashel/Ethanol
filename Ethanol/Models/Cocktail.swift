@@ -28,7 +28,7 @@ extension Cocktail {
   struct Ingredient {
     let id: String
     let unit: Unit
-    let amount: Int
+    let amount: String
     
     var name: String { id }
   }

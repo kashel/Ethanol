@@ -13,7 +13,8 @@ struct CocktailDTOMapper {
 
     let unit = mapUnit(dto.measure)
     let amount = Int(dto.quantity) ?? 0
-    return Cocktail.Ingredient(id: dto.ingredient.lowercased(), unit: unit, amount: amount)
+    let id = mapIngredientId(dto.ingredient)
+    return Cocktail.Ingredient(id: id, unit: unit, amount: amount)
   }
   
   private func mapUnit(_ unit : String) -> Unit {
@@ -28,5 +29,19 @@ struct CocktailDTOMapper {
     default:
       return .other(name: unitRaw)
     }
+  }
+  
+  private func mapIngredientId(_ id: String) -> String {
+    var name = id.lowercased().components(separatedBy: ",").first!.components(separatedBy: "(").first!
+    let trimmingWords = ["for ", "or ", " - "]
+    name = trimmingWords.reduce(name) { (name, trimmingWord) -> String in
+      if let index = name.range(of: trimmingWord)?.lowerBound {
+        let substring = name[..<index]
+        return String(substring)
+      }
+      return name
+    }
+    name = name.replacingOccurrences(of: "optional: ", with: "")
+    return name
   }
 }

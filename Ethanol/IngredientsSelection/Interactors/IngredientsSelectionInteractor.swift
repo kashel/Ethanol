@@ -21,10 +21,8 @@ struct BaseIngredientsSelectionInteractor: IngredientsSelectionInteractor {
   }
   
   func deselectAll() {
-    let ingredients = appState[\.ingredientSelection.ingredients]
-    ingredients.forEach {
-      change(ingredient: $0, isSelected: false)
-    }
+    let ingredients = appState[\.ingredientSelection.ingredients].map({ Ingredient(name: $0.name, imageName: $0.imageName, groups: $0.groups, isSelected: false) })
+    appState[\.ingredientSelection.ingredients] = ingredients
   }
   
   private func change(ingredient: Ingredient, isSelected: Bool) {

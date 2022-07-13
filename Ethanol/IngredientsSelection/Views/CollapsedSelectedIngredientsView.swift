@@ -7,12 +7,13 @@ struct CollapsedSelectedIngredientsView: View {
   @Environment(\.injected) private var injected: DependencyContainer
   @State private var selection: IngredientSelectionObservedModel = .init()
   @State private var filteredCocktails: [CocktailResult] = []
-
+  @Environment(\.colorScheme) var colorScheme
+  
   @State private var editMode = EditMode.active
   
     var body: some View {
       ZStack {
-        Color.black.opacity(0.8)
+        (colorScheme == .dark) ? Color.black.opacity(0.8) : Color.white.opacity(0.9)
         VStack {
           Button(action: {
             injected.interactors.activeSheet.present(.filteredCocktails)
@@ -49,7 +50,7 @@ private extension CollapsedSelectedIngredientsView {
       .padding(8)
       .background(
         RoundedRectangle(cornerRadius: 14)
-          .fill(Color.green.opacity(0.2))
+          .fill(Color(CGColor(red: 0, green: 175, blue: 145, alpha: 1)))
        )
   }
 }

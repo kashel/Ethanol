@@ -4,5 +4,7 @@ Learning SwiftUI by implementing simple app showing drinks that are possible to 
 
 
 
-https://user-images.githubusercontent.com/17430392/186121900-64c3e15d-52c8-4c6e-8c70-eca3561deee5.mov
+
+
+https://user-images.githubusercontent.com/17430392/186122601-02f6812c-686e-4ebd-8c51-deb452df4456.mov
 
